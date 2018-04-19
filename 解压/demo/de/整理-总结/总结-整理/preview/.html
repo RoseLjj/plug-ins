@@ -1,0 +1,747 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="js-ecmascript">js基础-ECMAscript</h1>
+<h2 id="-">代码注释</h2>
+<pre><code class="lang-js">- // 注释         =&gt;  单行注释
+- /* 注释 */      =&gt;  多行注释
+- /** + 回车键    =&gt;  函数注释
+</code></pre>
+<h2 id="-">变量</h2>
+<h3 id="-">变量的命名</h3>
+<h4 id="-">变量的命名规则</h4>
+<ol>
+<li>由字母、数字、下划线、$ 组成且开头不能是数字</li>
+<li>不能是关键字和保留字</li>
+<li>区分大小写</li>
+</ol>
+<h4 id="-">变量的命名规范(建议遵守)</h4>
+<ol>
+<li>变量的名称要有实际意义</li>
+<li>规则中所说的字母包括ASCII和Unicode字母字符，如汉字，但不推荐使用</li>
+<li>变量的命名遵守驼峰命名法，首字母小写,第二个单词的首字母大写
+例如：userName</li>
+</ol>
+<h3 id="-">变量的声明和使用</h3>
+<ul>
+<li>变量是在计算机中存储数据的一个标识符。 </li>
+<li>变量可以在声明的时候赋值，也可以稍后赋值。</li>
+</ul>
+<p>例如：</p>
+<pre><code class="lang-js">var number = 50;
+var name = &quot;马户&quot;;
+</code></pre>
+<p>或者</p>
+<pre><code class="lang-js">var name; 
+name = “张三”;
+//可以在一行上定义多个变量
+var name,age,sex;
+</code></pre>
+<h3 id="-">如何交换两个变量的值</h3>
+<ul>
+<li>使用第三方变量</li>
+</ul>
+<pre><code class="lang-js">var a = 10;
+var b = 20;
+var tmp = a;
+a = b;
+b = tmp;
+console.log(a); //20
+console.log(b); //10
+</code></pre>
+<ul>
+<li>不使用第三方变量(仅限于变量值是数值类型)</li>
+</ul>
+<pre><code class="lang-js">var a = 10;
+var b = 20;
+a = a + b;
+b = a - b;
+a = a - b;
+console.log(a,b);//20,10
+</code></pre>
+<h2 id="-">数据类型</h2>
+<h3 id="-">基本数据类型(值类型)</h3>
+<h4 id="number">number</h4>
+<pre><code class="lang-js">//十进制 0123456789 用十个符号表示所有数值
+var a = 123;//字面量 直接量
+
+//八进制 用八个符号表示所有的数值 01234567
+var b = 010;//八进制的字面量
+console.log(b);//在控制台打印输出的时候 是会转换成十进制的
+
+//十六进制 0123456789abcdef 用十六个符号表示所有的数值
+var c = 0x10;
+console.log(c);//会转换成十进制的值
+
+//浮点数
+var n = 5e+4;//xe+y 表示 x乘以 10的y次方 5*10000
+var n = 5e-4;//xe+y 表示 x乘以 10的y次方 0.0005
+console.log(n);
+//浮点数会丢失精度
+var num1 = 0.1;
+var num2 = 0.2;
+console.log(num1 + num2);//0.3
+console.log(0.07 * 100);//
+</code></pre>
+<p>** 注意:</p>
+<pre><code>1. NaN 是数值类型
+2. NaN 不等于自身
+3. isNaN : is Not is a Number =&gt; 是不是一个(有意义)数字
+ 3.1. 若为true,则表示不是一个数字
+ 3.2. 若为false,则表示是一个数字
+ 3.3. 用法 : isNaN(变量)
+4. 最大值 : Number.MAX_VALUE
+5. 最小值 : Number.MIN_VALUE
+6. 无穷 : Infinity
+</code></pre><p><strong>数值转换</strong></p>
+<pre><code>- Number(值) : 强制转换,将任意类型转化为数值型
+    `Number(12.8px) : NaN`
+    a)如果转换的内容本身就是一个数值类型的字符串，那么将来在转换的时候会返回自己。
+    b)如果转换的内容本身不是一个数值类型的字符串，那么在转换的时候结果是NaN.
+    c)如果要转换的内容是空的字符串，那以转换的结果是0
+    d）如果是其它的字符，那么将来在转换的时候结果是NaN
+- parseInt(&#39;字符串&#39;) : 将字符串转化为数值,小数点后数字省略
+    a)忽略字符串前面的空格，直至找到第一个非空字符,还会将数字后面的非数字的字符串去掉。
+    b)如果第一个字符不是数字符号或者负号，返回NaN
+    c）会将小数取整。（向下取整）Math.floor
+- parseFloat(&#39;字符串&#39;) : 将字符串转化为数值,可保留小数点
+- 除了+ 号以外的运算符号(+号是连接运算符)
+</code></pre><p><strong>NaN</strong></p>
+<p>有一种特殊的数据:NaN(not a number)</p>
+<p>NaN 是计算发生错误时的一种状态， 也是number类型的数据。
+判断是否是NaN的一个关键字:isNaN(is not a number):是非数字
+如果结果是NaN,，那么isNaN的结果是true,如果是一个正常的数字，isNaN返回的值是false;如果结果是一个字符串，那么isNaN的结果是true,</p>
+<h4 id="string">string</h4>
+<pre><code class="lang-js">var str = &#39;abdeidj&#39;;
+console.log(str.length);//7  str.length 计算字符串长度
+</code></pre>
+<p>** 注意:</p>
+<pre><code>+ 转义符
+    * \n : 换行
+    * \&#39; : 单引号
+    * \&quot; : 双引号
+    * \\ : 斜杠
++ 字符串的不可变性,大量拼接字符串会非常消耗资源
+</code></pre><p><strong> <em>字符串的转换</em> </strong></p>
+<pre><code>- String(值) : 任意类型转化为字符串
+- 值.toString() : 大部分类型都有此方法
+- 值 + &quot; &quot; : 隐式转换
+</code></pre><p><strong>字符串的操作方法</strong></p>
+<p>字符串所有的方法，都不会修改字符串本身(字符串是不可变的)，操作完成会返回一个新的字符串</p>
+<ol>
+<li><p><em>字符方法</em></p>
+<ul>
+<li>charAt()    //获取指定位置处字符</li>
+<li>charCodeAt()  //获取指定位置处字符的ASCII码</li>
+<li>str[0]   //ES5，IE8+支持 和charAt()等效</li>
+</ul>
+</li>
+<li><p><em>操作方法</em></p>
+<ul>
+<li>concat()   //拼接字符串，和+一样</li>
+<li>slice()     //从start位置开始，截取到end位置，end取不到</li>
+<li>substring() //从start位置开始，截取到end位置，end取不到</li>
+<li>substr()    //从start位置开始，截取length个字符</li>
+</ul>
+</li>
+<li><p><em>位置方法</em></p>
+<ul>
+<li>indexOf()   : 可返回某个指定的字符串值在字符串中首次出现的位置
+  <code>string.indexOf(searchValue,formindex)</code><pre><code>  * searchvalue:必需。规定需检索的字符串值。
+  * fromindex:可选的整数参数。规定在字符串中开始检索的位置。它的合法取值是 0 到 string.length - 1。如省略该参数，则将从字符串的首字符开始检索。
+</code></pre></li>
+<li>lastIndexOf() //从后往前找，只找第一个匹配的</li>
+</ul>
+</li>
+<li><p><em>大小写转换方法</em></p>
+<ul>
+<li>to(Locale)UpperCase() //转换大写</li>
+<li>to(Locale)LowerCase() //转换小写</li>
+</ul>
+</li>
+<li><p><em>其他方法</em></p>
+<ul>
+<li>trim()  //只能去除字符串前后的空白</li>
+<li>split()  //把字符串切割成字符数组</li>
+</ul>
+</li>
+<li><p>匹配方法</p>
+<ul>
+<li>search()</li>
+<li>replace():用于在字符串中用一些字符替换另一些字符,或替换一个与正则表达式匹配的子串.
+<code>stringObject.replace(regexp/substr,replacement)</code><ul>
+<li>regexp/substr : 必需,规定字符串或要替换的模式RegExp对象.请注意,如果该值是一个字符串,则将它作为要检索的直接量文本模式,而不是首先被转换为RexExp对象.</li>
+<li>replacement : 必需,一个字符串.规定了替换文本或生成替换文本的函数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>localeCompare()//两个字符串比较的是ASCII码</p>
+<ul>
+<li>s1.localeCompare(s2)   <ul>
+<li>s1 &gt; s2 返回正数，一般是1</li>
+<li>s1 == s2 返回0</li>
+<li>s1 &lt; s2  返回负数，一般是-1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>fromCharCode()</p>
+<ul>
+<li>String.fromCharCode(101,102,103); //把ASCII码转换成字符串</li>
+</ul>
+</li>
+</ol>
+<p><img src="img/字符串方法.jpg" alt=""></p>
+<h4 id="boolean">boolean</h4>
+<p>** 注意:</p>
+<pre><code>+ 值
+    * true
+    * false
+    * 只能为小写
++ 会转化成false的值有 : 空字符串&quot;&quot; 数值零0 NaN undefined null
+</code></pre><p><strong> <em>布尔值的转换</em> </strong></p>
+<pre><code>- Boolean(值) : 将任意类型转化为布尔值
+- if(值) : 条件判断中会自动转换
+- !!值 : 隐式转换
+</code></pre><h4 id="undefined">undefined</h4>
+<p>有声明,无赋值,则为undefined</p>
+<p>undefined派生自null</p>
+<h4 id="null">null</h4>
+<p>空</p>
+<h3 id="-">复杂数据类型(引用类型)</h3>
+<p><strong>Number</strong></p>
+<p><strong>String</strong></p>
+<p><strong>Boolean</strong></p>
+<p><strong>Object</strong></p>
+<p><strong>Function</strong></p>
+<p><strong>Array</strong></p>
+<h3 id="-">查看变量的数据类型</h3>
+<p>typeof 是一个关键字,它返回的数据类型是字符串</p>
+<pre><code>typeof 变量 // 获得变量的数据类型
+typeof(变量)
+</code></pre><h2 id="-">操作符</h2>
+<h3 id="-">一元运算符</h3>
+<ul>
+<li>递增 ++</li>
+<li>递减 --</li>
+<li>a++ : 先参与运算,后自加</li>
+<li>++a : 先自加 后参与运算</li>
+</ul>
+<h3 id="-">算术运算符</h3>
+<p>+ &emsp; - &emsp; * &emsp; / &emsp; %</p>
+<h3 id="-">逻辑运算符</h3>
+<ul>
+<li>&amp;&amp;(短路)
+与 : false &amp;&amp; 不管了  (一false都false)</li>
+<li>||(短路)
+或 : true || 不管了 (一true都true)</li>
+<li>!
+非</li>
+</ul>
+<h3 id="-">赋值运算符</h3>
+<p>+= &emsp; -= &emsp; *=  &emsp; /=  &emsp; %=</p>
+<pre><code class="lang-js">a += b
+//等价于
+a = a + b
+</code></pre>
+<h3 id="-">运算符优先级</h3>
+<ul>
+<li>优先级最高:  ( )</li>
+<li>一元运算符:  ++ &emsp; -- &emsp; !</li>
+<li>算数运算符:  先 * &emsp; / &emsp; % ; 后 + &emsp; - </li>
+<li>关系运算符:  &gt; &emsp; &gt;= &emsp; &lt; &emsp; &lt;=</li>
+<li>相等运算符:  == &emsp; != &emsp; === &emsp; !==</li>
+<li>逻辑运算符:  先&amp;&amp; 后||</li>
+</ul>
+<h2 id="javascript-">Javascript内置对象</h2>
+<h3 id="math">Math</h3>
+<p><img src="img/Math对象中常用的方法.png" alt=""></p>
+<h3 id="date-">Date()</h3>
+<ul>
+<li><strong>获取当前时间</strong><br><ul>
+<li><code>var date = new Date();</code> : 返回字符串<br></li>
+<li>可以通过以下方式返回数值类型的时间的毫秒形式，以便运算<br><ul>
+<li><code>var date = Date.now();</code> : //ES5，IE9+ <br></li>
+<li><code>var date = +new Date();</code> ://不支持now方法的时候<br></li>
+<li><code>var date = new Date(2005,10,1);</code> <ul>
+<li>可以接受三种参数<ul>
+<li>2005，10，1日期的每一部分</li>
+<li>&quot;2005-10-1&quot;  字符串的日期格式</li>
+<li>表示日期的毫秒形式1128096000000 <br></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>var date = Date.parse(&quot;2005-10-1&quot;);</code><br>
+把字符串或2005，10，1日期的每一部分转换成日期的毫秒形式，如果字符串的格式不是时间的正确格式返回NaN</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>日期格式转化方式</strong><ul>
+<li>toString()</li>
+<li>valueOf()   -- 返回时间对象对应的毫秒数字，因此可以直接判断两个时期的大小</li>
+<li>toDateString()</li>
+<li>toTimeString()</li>
+<li>toLocaleDateString()</li>
+<li>toLocaleTimeString()</li>
+<li>不同的浏览器，各种to...String()返回的结果不一致</li>
+</ul>
+</li>
+<li><strong>获取日期中指定部分</strong><ul>
+<li>getTime()  返回毫秒数和valueOf()结果一样</li>
+<li>getMilliseconds() </li>
+<li>getSeconds()  返回0-59</li>
+<li>getMinutes()  返回0-59</li>
+<li>getHours()   返回0-23</li>
+<li>getDay()     返回星期几 0周日   6周6</li>
+<li>getDate()    返回当前月的第几天</li>
+<li>getMonth()   返回月份，从0开始0-11</li>
+<li>getFullYear()   返回4位的年份  如 2016</li>
+</ul>
+</li>
+</ul>
+<h2 id="-">语句</h2>
+<h3 id="-">选择语句</h3>
+<h4 id="if-else">if-else</h4>
+<pre><code class="lang-js">    if (condition) {
+        statement1
+    } else if (condition) {
+        statement2
+    } else {
+        statement3
+    }
+</code></pre>
+<p>例子:</p>
+<pre><code class="lang-js">    var age = 20;
+    if (age &gt;= 18) {
+        console.log(&quot;欢迎&quot;);
+    } else if (age &gt;= 16) {
+        console.log(&quot;借你个18岁的身份证&quot;);
+    } else if (age &gt;= 10) {
+        console.log(&quot;太小了&quot;);
+    } else {
+        console.log(&quot;回去写作业&quot;);
+    }
+</code></pre>
+<h4 id="switch">switch</h4>
+<pre><code class="lang-js">    switch (expression) {
+        case value:
+            statement
+            break;
+        case value:
+            statement
+            break;
+        default:
+            statement
+    }
+</code></pre>
+<p>例子:</p>
+<pre><code class="lang-js">    var a = &quot;a&quot;;
+    switch (a) {
+        case &quot;a&quot;:
+            console.log(&quot;a&quot;);
+        case &quot;b&quot;:
+            console.log(&quot;b&quot;);
+        default :
+            console.log(&quot;default&quot;);
+    }
+</code></pre>
+<h4 id="-">三元表达式</h4>
+<pre><code class="lang-js">表达式1 ? 表达式2 : 表达式3
+//表达式1位true执行表达式2,为false执行表达式3
+</code></pre>
+<h3 id="-">循环语句</h3>
+<h4 id="for">for</h4>
+<pre><code class="lang-js">for (initialization; expression; post-loop-expression)｛
+    statement 
+｝
+//initialization:初始化表达式
+//expression:控制表达式
+//post-loop-expression:循环后表达式
+</code></pre>
+<p>例子:</p>
+<pre><code class="lang-js">    var i = 1;
+    for (; i &lt;= 5;) {
+        console.log(i);
+        i++;
+    }
+    //或者
+    for (var i = 1; i &lt;= 5;i++) {
+        console.log(i);
+    }
+</code></pre>
+<h4 id="while">while</h4>
+<p>先判断后执行</p>
+<pre><code class="lang-js">while(expression) statement
+</code></pre>
+<p>例子:</p>
+<pre><code class="lang-js">    while (i &lt;= 100){
+     sum += i;
+     i++;
+     }
+</code></pre>
+<h4 id="do-while">do-while</h4>
+<p>先执行后判断</p>
+<pre><code class="lang-js">do {statement} while (expression);
+</code></pre>
+<p>例子:</p>
+<pre><code class="lang-js">    do {
+     sum += i;
+     i++;
+     } while (i &lt;= 100);
+</code></pre>
+<h4 id="-break-continue-"><em>break和continue</em></h4>
+<ul>
+<li>break 跳出当前循环,执行循环后的语句</li>
+<li>continue 跳出当前循环,继续执行循环</li>
+</ul>
+<h2 id="-">数组</h2>
+<h3 id="-">数组的声明</h3>
+<ul>
+<li><p>通过构造函数声明(更加通用)</p>
+<pre><code class="lang-js">var arr = new Array(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);
+</code></pre>
+</li>
+<li><p>通过字面量声明(更加便捷)</p>
+<pre><code class="lang-js">var arr = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;];
+</code></pre>
+</li>
+</ul>
+<h3 id="-">数组的赋值和取值</h3>
+<ul>
+<li>赋值</li>
+</ul>
+<pre><code class="lang-js">数组名[索引号] = 值 //arr[0]=100
+</code></pre>
+<ul>
+<li>取值</li>
+</ul>
+<pre><code class="lang-js">数组名[索引号]  //console.log(arr[0])
+</code></pre>
+<h3 id="-">数组的遍历</h3>
+<pre><code class="lang-js">for (var i = 0; i &lt; arr.length; i++) {
+    console.log(arr[i]);
+}
+</code></pre>
+<h3 id="-">数组的方法</h3>
+<p><img src="img/Array.jpg" alt=""></p>
+<p><strong>补充</strong></p>
+<ul>
+<li>位置方法<ul>
+<li>indexOf()  :寻找指定项目在数组中的位置</li>
+<li>lastIndexOf()   :如果没找到返回-1 </li>
+</ul>
+</li>
+<li>迭代方法 （ES5中的新方法，不会修改原数组）<ul>
+<li>every()、filter()、forEach()、map()、some()</li>
+</ul>
+</li>
+</ul>
+<h3 id="-">数组的应用</h3>
+<ul>
+<li>冒泡排序<pre><code class="lang-js">for(var i = 0; i &lt; arr.length-1; i++){
+  var flag = true;
+  for(var j = 0; j &lt; arr.length - i - 1; j++){
+      if(arr[j] &gt; arr[j+1]){
+          var tmp = arr[j];
+          arr[j] = arr[j+1];
+          arr[j+1] = tmp;
+          flag = false;
+      }
+  }
+  if(flag){
+      break;
+  }
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="arr-sort-">arr.sort()</h3>
+<p>数组排序</p>
+<p>arr.sort(compareFunction)</p>
+<pre><code>- compareFunction:可选。用来指定按某种顺序进行排列的函数。如果省略，元素按照转换为的字符串的诸个字符的Unicode位点进行排序。
+</code></pre><ul>
+<li>传参<ul>
+<li>如果 compareFunction(a, b) 小于 0 ，那么 a 会被排列到 b 之前(数值数组从小到大排列)</li>
+<li>如果 compareFunction(a, b) 等于 0 ， a 和 b 的相对位置不变(数值数组位置不变)</li>
+<li>如果 compareFunction(a, b) 大于 0 ， b 会被排列到 a 之前(数值数组从大到小排列)</li>
+</ul>
+</li>
+</ul>
+<p>希望比较数字而非字符串,比较函数可以简单的以a减b,如下的函数将会将数组升序排列</p>
+<pre><code class="lang-js">function compareNumbers(a, b){
+    return a - b;
+}
+</code></pre>
+<p>例子:</p>
+<pre><code class="lang-js">var arr = [4, 2, 5, 1, 3];
+arr.sort(function(a, b) {
+  return a - b;
+});
+console.log(arr);  // [1, 2, 3, 4, 5]
+</code></pre>
+<h2 id="-">函数</h2>
+<h3 id="-">函数的声明和调用</h3>
+<p>函数的声明</p>
+<pre><code class="lang-js">function 函数名 () {
+    //函数体 
+}
+</code></pre>
+<p>函数表达式</p>
+<pre><code class="lang-js">var fn2 = function () {
+    //函数体
+};
+</code></pre>
+<p>函数的调用</p>
+<pre><code class="lang-js">函数名();
+</code></pre>
+<h3 id="-">函数的参数</h3>
+<ul>
+<li><p>形参:声明中的参数只是一个占位符,没有实际的值,是形式参数</p>
+<pre><code class="lang-js">function 函数名 (参数1,参数2,参数3...) {
+  //函数体 
+}
+</code></pre>
+</li>
+<li><p>实参:调用时传入的参数才是有真正数值的参数,是实际参数,即实参</p>
+<pre><code class="lang-js">函数名(参数1,参数2,参数3...);
+</code></pre>
+</li>
+</ul>
+<p><strong>在JS中实参的个数和形参的个数可以不一致</strong></p>
+<h3 id="-">函数的返回值</h3>
+<p>在函数中通过return关键字将要返回值返回</p>
+<pre><code class="lang-js">return 要返回的值;
+</code></pre>
+<p>函数的返回值是什么，调用这个函数就相当于调用什么，如果没有返回值则为undefined</p>
+<p>函数在执行完成return语句后便会退出函数，后面的代码不会执行</p>
+<h3 id="-">特殊常用函数</h3>
+<h4 id="-">匿名函数</h4>
+<p>匿名函数:没有名字的函数</p>
+<pre><code class="lang-js">function () {
+    //函数体
+}
+</code></pre>
+<p>作用:一般用在绑定事件的时候</p>
+<p><em>立即执行函数:</em></p>
+<pre><code class="lang-js">(function(){
+
+})()
+</code></pre>
+<h4 id="-">递归调用</h4>
+<p>程序调用自身的编程技巧称为递归</p>
+<pre><code class="lang-js">// 斐波那契数列 1,1,2,3,5,8,13,21,34,55,89...
+function f1(n){
+    if( n ==1 || n == 2 ){
+        return 1;
+    }
+    f1(n) = f1(n-1) + f1(n-2)
+}
+</code></pre>
+<h4 id="-">回调函数</h4>
+<p>函数也是一种普通的数据类型,因此函数也可以被当作参数传递,被当作参数传递的函数叫做回调函数.</p>
+<h2 id="-">对象</h2>
+<p>从宏观的角度讲，对象是对客观事物的抽象，事物的特征可以用属性表示，事物的行为可以用方法表示<br>
+从微观的角度讲，对象就是一种数据类型，通过对象可以方便地对变量和函数进行管理<br>
+初期我们甚至可以把他简单地理解为一个工具箱</p>
+<p>对象就是键值对的集合  key:value</p>
+<p><strong>对象字面量</strong></p>
+<pre><code class="lang-js">var obj = {
+    name : &quot;zs&quot;,
+    age : 18,
+    sayHi : function() {
+        console.log(this.name);
+    }
+};
+</code></pre>
+<h3 id="-">对象的声明</h3>
+<p>通过构造函数声明（更加通用）
+<code>var obj= new Object();</code></p>
+<p>通过字面量声明（更加简便）
+<code>var obj= {};</code></p>
+<h3 id="-">对象具有属性和方法</h3>
+<h4 id="-">属性</h4>
+<p>属性: 用来描述对象的特征 一般是名词 对应变量</p>
+<p>属性的定义
+<code>js 对象.属性名 = 值</code></p>
+<p>属性的调用
+<code>js 对象.属性名</code></p>
+<h4 id="-">方法</h4>
+<p>方法 用来描述对象的行为 一般是动词 对应函数</p>
+<p>方法的定义
+<code>对象.方法名 = function(){ //函数体 };</code></p>
+<p>方法的调用</p>
+<pre><code class="lang-对象.方法名()```">
+#### 访问属性的两种方式
+
+点语法（简单）
+```js 对象.属性名
+</code></pre>
+<p>中括号（灵活）
+<code>js 对象[“属性名”]</code></p>
+<h4 id="-">遍历的两种方式</h4>
+<p>通过<strong>for-in</strong>可以对集合进行有序的遍历</p>
+<pre><code class="lang-js">for(var k in obj) { 语句 }
+//k变量代表的是json中的各个属性（key）和 var i = 0中的i是一个意思 名字不同而已
+</code></pre>
+<h2 id="-">正则表达式</h2>
+<h3 id="-">正则的声明和使用</h3>
+<ul>
+<li>通过构造函数定义 <code>var 变量名= new RegExp(/表达式/)</code>;</li>
+<li>通过直接量定义（简单方便，我们一般用这个）<code>var 变量名= /表达式/</code>;</li>
+</ul>
+<p>常用方法，可用于检测传入的字符串是否符合该规则并返回布尔值
+<code>exp.test(&quot;要检测的字符串&quot;)</code></p>
+<p><strong>| 表示或 或的优先级最低 可以通过()提升优先级</strong></p>
+<h3 id="-">预定义类和转义符</h3>
+<ul>
+<li><code>.  [^\n\r]</code> : 除了换行和回车之外的任意字符</li>
+<li><code>\d [0-9]</code> : 数字字符digit</li>
+<li><code>\D [^0-9]</code> : 非数字字符</li>
+<li><code>\w [a-zA-Z0-9_]</code> : 单词字符(所有的英文字母数字和_) word</li>
+<li><code>\W [^a-zA-Z0-9_]</code> : 非单词字符</li>
+<li><code>\s [\f\r\n\t\v]</code> : 不可见字符 space</li>
+<li><code>\S [^\f\r\n\t\v]</code> : 可见字符</li>
+</ul>
+<h3 id="-">转义符</h3>
+<ul>
+<li><code>\f</code> 表示换页 <code>form feed</code></li>
+<li><code>\t</code> 表示水平制表符 <code>table</code></li>
+<li><code>\v</code> 表示垂直制表符 <code>vertical table</code></li>
+</ul>
+<p><img src="img/转义字符.png" alt=""></p>
+<h3 id="-">字符类</h3>
+<ul>
+<li>简单类[abc] 表示该位置可以出现的字符</li>
+<li>负向类[^abc] 表示该位置不可以出现的字符</li>
+<li>范围类[a-e]  表示该位置可以出现的字符的范围</li>
+<li>组合类[a-xA-E0-9] 范围类的组合</li>
+</ul>
+<h3 id="-">边界 量词 括号</h3>
+<h4 id="-">边界</h4>
+<ul>
+<li><code>^</code> : 会匹配行或者字符串的起始位置</li>
+<li><code>^(非)</code> :只有在[]内才表示非 在外边表示开始</li>
+<li><code>$</code> : 会匹配行或字符串的结尾位置</li>
+<li><code>^$</code> : 在一起 表示必须是这个（精确匹配）</li>
+</ul>
+<h4 id="-">量词</h4>
+<ul>
+<li><code>&quot;*&quot;</code> :  重复零次或更多 x&gt;=0</li>
+<li><code>&quot;+&quot;</code> :  重复一次或更多次 x&gt;=1</li>
+<li><code>&quot;?&quot;</code> :  重复零次或一次  x=(0||1)</li>
+<li><code>{n}</code> :  n次  x=n</li>
+<li><code>{n,}</code> :  重复n次或更多  x&gt;=n</li>
+<li><code>{n,m}</code> :  重复出现的次数比n多但比m少 n&lt;=x&lt;=m</li>
+</ul>
+<h4 id="-">括号总结</h4>
+<ul>
+<li><code>()</code> : 表示一组</li>
+<li><code>[]</code> : 表示一个字符的位置</li>
+<li><code>{}</code> : 表示次数</li>
+</ul>
+<h4 id="-">常见项目的匹配</h4>
+<ul>
+<li>国内电话号码: <code>/^0\d{2,3}-\d{7,8}$/</code></li>
+<li>姓名: <code>/^[\u4e00-\u9fa5]{2,}$/</code></li>
+<li>QQ号: <code>/^[1-9]\d{4,10}$/</code></li>
+<li>手机号: <code>/^(13[0-9]|14[57]|15[0-9]|18[0-9])\d{8}$/</code></li>
+<li>邮箱: <code>/^\w+([+-.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/</code></li>
+</ul>
+<h4 id="-trim-">封装自己的trim()方法</h4>
+<pre><code class="lang-js">function trim(str) {
+    return str.replace(/^\s+/,&quot;&quot;).replace(/\s+$/,&quot;&quot;);
+}
+
+function trim(str) {
+    return str.replace(/^\s+|\s+$/g,&quot;&quot;);
+}
+</code></pre>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

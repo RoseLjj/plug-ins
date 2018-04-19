@@ -1,0 +1,55 @@
+*,::before,::after{
+	margin: 0;
+	padding: 0;
+	/* 有的手机 没有改字体 */
+	font-family: "微软雅黑",sans-serif;
+	
+	/* 清除默认的 点击高亮效果 */
+	-webkit-tap-highlight-color: transparent;
+	tap-highlight-color: transparent;
+	
+	/* 让元素 优先考虑 自己的区域大小 */
+	-webkit-box-sizing: border-box;
+	box-sizing:border-box;
+}
+
+ul,ol{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+	color:gray;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+input{
+	border: none;
+	outline: none;
+	
+	/* 还有一个 移动端 专有的input外观 */
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+
+/* 左右浮动 */
+.f_l{
+	float: left;
+}
+.f_r{
+	float: right;
+}
+
+.clearfix::before,
+.clearfix::after{
+	content: '';
+	display: block;
+	visibility: hidden;
+	clear: both;
+	line-height: 0;
+	height: 0;
+}

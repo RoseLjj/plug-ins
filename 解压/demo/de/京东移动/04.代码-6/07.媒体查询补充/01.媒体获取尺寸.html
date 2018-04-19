@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body {
+				background-color: orange;
+			}
+			/* body 在 宽度 为 600的时候 变为 蓝色 */
+			
+			@media screen and (width:600px) {
+				body {
+					background-color: skyblue;
+				}
+			}
+			
+			
+			/* 基本上 把主流的屏幕尺寸写好了 就能够兼容 超过 90%的手机设备 */
+			/* 320px的屏幕 设置字体大小
+			 * 	这里以20作为演示
+			 *  */
+			@media screen and (width:320px) {
+				html{
+					font-size:16px;
+				}
+			}
+			/* 320px的屏幕 设置字体大小
+			 * 	这里以20作为演示
+			 *  */
+			@media screen and (width:360px) {
+				html{
+					font-size:18px;
+				}
+			}
+			/* 320px的屏幕 设置字体大小
+			 * 	这里以20作为演示
+			 *  */
+			@media screen and (width:375px) {
+				html{
+					/* 375/20 */
+					font-size:18.75px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+	</body>
+
+</html>

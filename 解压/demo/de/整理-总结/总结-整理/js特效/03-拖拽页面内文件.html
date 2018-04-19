@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			.color{
+				width:100px;
+				height:100px;
+				background-color: red;
+			}
+			.box{
+				width:100px;
+				height:100px;
+				border:5px dashed;
+			}
+        </style>
+    </head>
+    <body>
+    <!-- 默认可以拖拽 -->
+    <img src="../img/bom.jpg" height="100" width="150" alt="">
+    <!-- 1.允许拖拽,加入draggable="true" -->
+    <div class="color" draggable="true"></div>
+    <div class="box"></div>
+    </body>
+    <script>
+    	// 5.声明一个变量,用于保存被拖拽的文件信息
+    	var fileDom;
+    	// 2.阻止默认事件,这个只是改变了div外观,使禁止取消
+    	document.querySelector(".box").ondragover = function(e){
+    		e.preventDefault();
+    	}
+    	// 3.丢入事件
+    	document.querySelector(".box").ondrop = function(){
+    	// 5. 给box设置拖拽文件
+    		if(fileDom.src){
+    			this.style.background = 'url('+ fileDom.src +') no-repeat 0px 0px/100px 150px'
+    		}else{
+    			//6.获取div的样式
+    			var color = getComputedStyle(fileDom).backgroundColor
+    			// 7.将颜色赋值给box
+    			this.style.background = color;
+    		}	
+    	}
+    	// 4.获取拖拽进入的文件
+    	document.querySelector("img").ondragstart = function(){
+    		fileDom = this;
+    	}
+    	// 4. 获取拖拽进入的文件
+    	document.querySelector(".color").ondragstart = function(){
+    		fileDom = this;
+    	}
+    </script>
+</html>

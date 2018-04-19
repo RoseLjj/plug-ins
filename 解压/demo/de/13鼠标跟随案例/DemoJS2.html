@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<img src="img.jpg" alt="" width="50" height="50" id="pic"/>
+<script src="animate.js"></script>
+<script>
+    //找人
+    var pic = document.getElementById("pic");
+    //鼠标点击页面 获取点击时的位置 让精灵图 渐渐地过来
+    /*document.onmousemove = function () {
+        console.log("鼠标移动了");
+    };*/
+    //onmousemove
+    document.onmousemove = function (event) {
+        var event = event || window.event;
+        //获取点击时在页面上的位置
+        var pageX = event.pageX || event.clientX + document.documentElement.scrollLeft;
+        var pageY = event.pageY || event.clientY + document.documentElement.scrollTop;
+        //计算目标
+        var targetX = pageX - pic.offsetWidth / 2;
+        var targetY = pageY - pic.offsetHeight / 2;
+        //让精灵图渐渐地过来
+        animate(pic, {"left": targetX, "top": targetY});
+    };
+</script>
+</body>
+</html>

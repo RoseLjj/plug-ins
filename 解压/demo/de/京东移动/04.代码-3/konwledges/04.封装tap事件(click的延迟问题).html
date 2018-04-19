@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body,html{
+				height: 100%;
+			}
+			body{
+				background-color: orange;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	// 执行时机 比click早的 轻敲事件
+	// 一次完整轻敲事件 包含 手指触摸 手指松开
+	
+	// 手指不能移动
+	
+	// 手指触发 与离开的间隔 需要短 100
+	
+	// 定义变量
+	
+	// 手指是否移动
+	var isMove = false;
+	
+	// 代码中 直接写死 某些具体的数字 非常不利于后期维护  magic number
+	// 而是通过定义变量方式 解决
+	var delayTime = 100;
+	
+	// 记录 开始的时间
+	var startTime = 0;
+
+	// 开始触摸
+	document.body.addEventListener('touchstart',function(event){
+		
+		// 将 isMove 设置为初始值 false
+		isMove = false;
+		
+		startTime = Date.now();
+	})
+	document.body.addEventListener('touchmove',function(event){
+		isMove = true;
+	})
+	document.body.addEventListener('touchend',function(event){
+		// 如果移动了 失效
+		if(isMove == true){
+			console.log('移动了');
+			return;
+		}
+		// 超时 也算失败
+		else if(Date.now()-startTime>delayTime){
+			console.log('超时了');
+			return;
+		}
+		
+		// 如果代码能够执行到这里
+		console.log('成功触发了');
+	})
+</script>

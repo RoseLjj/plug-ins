@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ClockPicker</title>
+
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="dist/bootstrap-clockpicker.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+  <div class="form-group">
+    <div class="input-group clockpicker">
+      <input type="text" class="form-control" value="09:30">
+    </div>
+
+  </div>
+
+</div>
+
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="dist/bootstrap-clockpicker.min.js"></script>
+
+<script type="text/javascript">
+
+$('.clockpicker').clockpicker()
+/*
+  .find('input').change(function(){
+
+    console.log(this.value);
+
+  });
+*/
+  $('button').on('click',function(){
+    console.log($('.form-control').val())
+  })
+
+</script>
+
+</body>
+
+</html>

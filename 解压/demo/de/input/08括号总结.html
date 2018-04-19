@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //{} 量词 表示内容出现的次数
+    console.log(/^a{2}$/.test("aa"));
+    //[] 表示一个字符的位置
+    console.log(/^[abc]$/.test("c"));
+    //() 表示一组 可以提高优先级
+    console.log(/^chuan$/.test("chuan"));
+    console.log(/^chuan$/.test("chuanchuan"));//false
+    console.log(/^chuan{2}$/.test("chuanchuan"));//false 量词修饰的是紧跟着的内容出现的次数
+    console.log(/^chuan{2}$/.test("chuann"));//true
+    console.log(/^(chuan){2}$/.test("chuanchuan"));//true
+</script>
+</body>
+</html>

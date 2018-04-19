@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    
+        .checkboxOne {
+            width: 52pt;
+            height: 31pt;
+            background: #fff;
+            margin: 20px 80px;
+            position: relative;
+            border-radius: 100px;
+            border: 1px solid #E0E0E5;
+        }
+        .checkboxOne label {
+            display: block;
+            width: 28pt;
+            height: 28pt;
+            border-radius: 50%;
+            transition: all .5s ease;
+            cursor: pointer;
+            position: absolute;
+            top: 0pt;
+            left: 0pt;
+            background: linear-gradient(-180deg, #FFFFFF, #E5E6EB);
+            box-shadow: 0 2px 3px 0;
+        }
+        .checkboxOne input[type=checkbox]:checked + label{
+            left: 24pt;
+        }
+        .one {
+            width: 500px;
+            height: 500px;
+            /*background-color: #aaa;*/
+        }
+        #checkboxOneInput {
+            width:54pt;
+            height: 31pt;
+            position: absolute;
+            top:-2pt;
+            left: -3pt;
+            z-index: -3;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+   <!-- <div class="checkboxFive">
+        <input type="checkbox" name="" id="checkboxFiveInput" value="1"/>
+        <label for="checkboxFiveInput"></label>
+    </div>
+    <div class="box"></div>-->
+   <div class="one">
+    <section>
+        <h3>checkbox 圆筒滚</h3>
+        <div class="checkboxOne">
+            <input type="checkbox" value="1" id="checkboxOneInput" name=""/>
+            <label for="checkboxOneInput"></label>
+        </div>
+    </section>
+   </div>
+<!--<div>
+    <p><span>中梦测试10px</span></p>
+</div>-->
+</body>
+</html>

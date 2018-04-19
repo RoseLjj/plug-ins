@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>bs的模板</title>
+
+		<!-- Bootstrap -->
+		<link href="lib/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+		<!-- 小于ie9的时候 导入了 两个js -->
+		<!-- html5shiv.min.js  html5中 新语义标签 -->
+		<!-- 低版本的 ie中 也让 媒体查询语法 被支持 -->
+		<!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+		<style>
+			.heimai-default {
+				background-color: #f8f8f8;
+				border-color: #e7e7e7;
+			}
+			
+			.heimai-default .navbar-brand {
+				color: #777;
+				height: 80px;
+				line-height: 50px;
+			}
+			
+			.heimai-default .navbar-brand:hover,
+			.heimai-default .navbar-brand:focus {
+				color: #5e5e5e;
+				background-color: transparent;
+			}
+			
+			.heimai-default .navbar-text {
+				color: #777;
+			}
+			
+			.heimai-default .navbar-nav> li> a {
+				color: #777;
+				height: 80px;
+				line-height: 50px;
+			}
+			
+			.heimai-default .navbar-nav> li> a:hover,
+			.heimai-default .navbar-nav> li> a:focus {
+				color: #333;
+				background-color: transparent;
+				border-bottom: 4px solid red;
+			}
+			
+			.heimai-default .navbar-nav> .active> a,
+			.heimai-default .navbar-nav> .active> a:hover,
+			.heimai-default .navbar-nav> .active> a:focus {
+				color: #555;
+				/*background-color: #e7e7e7;*/
+				border-bottom: 4px solid red;
+			}
+			
+			.heimai-default .navbar-nav> .disabled> a,
+			.heimai-default .navbar-nav> .disabled> a:hover,
+			.heimai-default .navbar-nav> .disabled> a:focus {
+				color: #ccc;
+				background-color: transparent;
+			}
+			
+			.heimai-default .navbar-toggle {
+				border-color: #ddd;
+			}
+			
+			.heimai-default .navbar-toggle:hover,
+			.heimai-default .navbar-toggle:focus {
+				background-color: #ddd;
+			}
+			
+			.heimai-default .navbar-toggle .icon-bar {
+				background-color: #888;
+			}
+			
+			.heimai-default .navbar-collapse,
+			.heimai-default .navbar-form {
+				border-color: #e7e7e7;
+			}
+			
+			.heimai-default .navbar-nav> .open> a,
+			.heimai-default .navbar-nav> .open> a:hover,
+			.heimai-default .navbar-nav> .open> a:focus {
+				color: #555;
+				background-color: #e7e7e7;
+			}
+			
+			@media (max-width: 767px) {
+				.heimai-default .navbar-nav .open .dropdown-menu> li> a {
+					color: #777;
+				}
+				.heimai-default .navbar-nav .open .dropdown-menu> li> a:hover,
+				.heimai-default .navbar-nav .open .dropdown-menu> li> a:focus {
+					color: #333;
+					background-color: transparent;
+				}
+				.heimai-default .navbar-nav .open .dropdown-menu> .active> a,
+				.heimai-default .navbar-nav .open .dropdown-menu> .active> a:hover,
+				.heimai-default .navbar-nav .open .dropdown-menu> .active> a:focus {
+					color: #555;
+					background-color: #e7e7e7;
+				}
+				.heimai-default .navbar-nav .open .dropdown-menu> .disabled> a,
+				.heimai-default .navbar-nav .open .dropdown-menu> .disabled> a:hover,
+				.heimai-default .navbar-nav .open .dropdown-menu> .disabled> a:focus {
+					color: #ccc;
+					background-color: transparent;
+				}
+			}
+			
+			.heimai-default .navbar-link {
+				color: #777;
+			}
+			
+			.heimai-default .navbar-link:hover {
+				color: #333;
+			}
+			
+			.heimai-default .btn-link {
+				color: #777;
+			}
+			
+			.heimai-default .btn-link:hover,
+			.heimai-default .btn-link:focus {
+				color: #333;
+			}
+			
+			.heimai-default .btn-link[disabled]:hover,
+			fieldset[disabled] .heimai-default .btn-link:hover,
+			.heimai-default .btn-link[disabled]:focus,
+			fieldset[disabled] .heimai-default .btn-link:focus {
+				color: #ccc;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<nav class="navbar heimai-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+					<a class="navbar-brand" href="#">微金所</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="#">Link <span class="sr-only">(current)</span></a>
+						</li>
+						<li>
+							<a href="#">Link</a>
+						</li>
+						<li>
+							<a href="#">Link</a>
+						</li>
+						<li>
+							<a href="#">Link</a>
+						</li>
+						<li>
+							<a href="#">Link</a>
+						</li>
+						<li>
+							<a href="#">Link</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right hidden-xs hidden-sm ">
+						<li>
+							<a href="#">Link</a>
+						</li>
+
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+	</body>
+
+</html>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="lib/js/jquery-1.12.4.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="lib/js/bootstrap.min.js"></script>

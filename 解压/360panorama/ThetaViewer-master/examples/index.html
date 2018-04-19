@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+  <script src="../libs/modernizr-2.7.1-csstransforms3d-canvas-touch.js"></script>
+  <script src="../libs/megapix-image.js"></script>
+  <script src="http://www.jq22.com/jquery/three.min.js"></script>
+  <script src="../libs/Detector.js"></script>
+  <script src="../libs/CSS3DRenderer.js"></script>
+  <script src="../build/theta-viewer.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Sample of THETA Viewer</title>
+  <style>
+    #theta-viewer{
+      position: relative;
+    }
+    #theta-viewer img{
+      position: absolute;
+      top: 100px;
+      left: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div id="theta-viewer">
+    <img src="./img/kecheng.jpeg" alt="">
+  </div>
+  <script>
+/*global jQuery */
+(function ($) {
+    'use strict';
+
+    // #theta-viewerにパノラマ画像img/R0010035.JPGを表示
+    $("#theta-viewer").createThetaViewer('./img/R0010035.JPG');
+
+}(jQuery));
+  </script>
+</body>
+</html>
+<script>
+    $('body').on('click',function (event) {
+        var canvas = document.getElementById('theta-viewer');
+        var x = event.clientX - canvas.getBoundingClientRect().left;
+        var y = event.clientY - canvas.getBoundingClientRect().top;
+        console.log(x);
+    })
+</script>

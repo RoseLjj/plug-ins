@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    html {
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+        -moz-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+        /* filter: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\"><filter ….3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\"/></filter></svg>#grayscale"); */
+        /* filter: progid: DXImageTransform.Microsoft.BasicImage(grayscale=1); */
+        filter: gray;
+        -webkit-filter: grayscale(1);
+    }
+    
+    /* html {
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+        -moz-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+        filter: url("data:images/svg+xml;utf-8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter ... .3333 0 0 0.3333 0.3333 0 0 0 0 0 1 0\>");
+    } */
+    /* 下面的这三个方法 如果有其他的兄弟元素 会一并考虑进去  */
+    /* 为第一个h3标签 添加样式
+			first-child 需要满足的条件是 该元素 是 第一个
+		 */
+    
+    h3:first-child {
+        color: orange;
+    }
+    /* 为最后一个h3添加样式
+			first-child 需要满足的条件是 该元素 是 第一个
+		 */
+    /* h3:last-child{
+			font-size: 12px;
+		} */
+    /* 为第三个h3添加样式 */
+    /* nth-child 如果给的是 索引 是从1开始
+			nth-child使用的时候 如果前面有其他的元素 也会计算进去 索引
+		 */
+    
+    h3:nth-child(2) {
+        background-color: pink;
+    }
+    /* 不考虑兄弟元素的 伪类选择器 */
+    
+    h3:first-of-type {
+        background-color: orange;
+    }
+    
+    h3:last-of-type {
+        font-size: 8px;
+        color: red;
+    }
+    
+    h3:nth-of-type(3) {
+        background-color: hotpink
+    }
+    /*  前面 不一定非要写 标签选择器
+			.item:first-child{
+	
+			}
+		 */
+    /*  
+			我们可以使用 n作为一个 占位
+			n的取值是 0....慢慢增大
+			>4
+		 */
+    /* h3:nth-of-type(n+5){
+			border: 10px solid gray;
+		 }
+		 h3:nth-of-type(2n){
+		 	font-size: 50px;
+		 }
+		 /* 单数 */
+    /*  h3:nth-of-type(2n+1){
+		 	color: skyblue;
+		 }  */
+    </style>
+</head>
+
+<body>
+    <p>卷福</p>
+    <h3 class='firsth3'>奇异博士</h3>
+    <h3>湄公河行动</h3>
+    <p>彭于晏好帅啊</p>
+    <h3>我不是潘金莲</h3>
+    <h3>小时代</h3>
+    <h3>美国队长1</h3>
+    <h3>美国队长2</h3>
+    <h3>美国队长3</h3>
+    <h3>钢铁侠1</h3>
+    <h3>钢铁侠2</h3>
+    <h3>钢铁侠3</h3>
+    <p>郭老师拍摄的</p>
+    <img src="../img/淘宝三角.png" height="59" width="123" alt="">
+</body>
+<!-- <script>
+function Foo() {
+    getName = function() {
+        alert(1);
+    };
+    return this;
+}
+Foo.getName = function() {
+    alert(2);
+};
+Foo.prototype.getName = function() {
+    alert(3);
+};
+var getName = function() {
+    alert(4);
+};
+
+function getName() {
+    alert(5);
+};
+
+//请写出以下输出结果
+Foo.getName();  //2
+getName();   //4
+Foo().getName();  //1
+getName();  //4
+new Foo.getName();  //2
+new Foo().getName();  //3
+new new Foo().getName();  //3
+</script> -->
+<script>
+var str = 'user.name.firstname=Bob&user.nam.lastname=Smith&user.favouritecolor=lightBlue';
+/*
+ {
+   'user':{
+        'name':{
+              'firstname':'Bob',
+               'lastname':'Smith'
+           },
+         'favouritecolor':'lightBlue'
+       }
+ }
+
+ */
+/* function turn(str) {
+     var arr = str.split('&');  // 得到 user.name.firstname=Bob  user.favouritecolor=lightBlue 0 1 2
+     // 对arr[0] 进行操作
+     var Arr = arr[0].split('='); // 得到 user.name.firstname     Bob
+     var Brr = Arr[0].split('.');  //  uesr name firstname
+     console.log(Arr[1]);
+     Brr[0]={}
+     for(var i=0;i<Brr.length-1;i++)
+     {
+
+         if(i<Brr.length-2)
+         {
+             Brr[i][Brr[i+1]] = {};
+             Brr[i][Brr[i+1]][Brr[i+2]] = Arr[1].toString();//  Brr[0][Brr[1]]={}
+         }else {
+             break;
+         }
+     }
+     console.log(Brr[Brr.length-1]);
+        return Brr[0];  // 雏形已经完成
+
+
+ }
+ console.log(turn(str));;*/
+
+function convertQueryToMap(query) {
+    return query.split('&').map(function(e, i) {
+            return e.split('=')
+        })
+        .reduce(function(pre, cur, idx) {
+
+            var
+                rel = cur[0].split('.'),
+                value = cur[1]
+
+            rel.reduce(function(obj, key, i) {
+                obj[key] = obj[key] || {}
+                if (i === rel.length - 1) {
+                    if (value !== undefined) value = decodeURIComponent(value)
+                    obj[key] = value
+                }
+                return obj[key]
+            }, pre)
+            return pre
+        }, {})
+}
+convertQueryToMap(str);
+</script>
+
+</html>

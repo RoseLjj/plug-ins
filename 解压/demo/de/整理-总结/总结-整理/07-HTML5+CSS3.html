@@ -1,0 +1,1665 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>07-HTML5+CSS3</title></head><body><article class="markdown-body"><h1 id="html5-css3"><a name="user-content-html5-css3" href="#html5-css3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HTML5 + CSS3</h1>
+<h2 id="h5"><a name="user-content-h5" href="#h5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>H5新标签</h2>
+<h3 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>语义标签：</h3>
+<ul>
+<li>article : <code>&lt;article&gt;定义文章&lt;/article&gt;</code></li>
+<li>aside : <code>&lt;aside&gt;定义文章侧边栏&lt;/aside&gt;</code></li>
+<li>figure : <code>&lt;figure&gt;定义一组媒体对象以及文字内容&lt;/figure&gt;</code></li>
+<li>figcaption : <code>&lt;figcaption&gt;定义figure的标题&lt;/figcaption&gt;</code></li>
+</ul>
+<p>布局页面时用的语义标签：</p>
+<ul>
+<li>nav : <code>&lt;nav&gt;定义导航&lt;/nav&gt;</code></li>
+<li>header : <code>&lt;header&gt;头部&lt;/header&gt;</code></li>
+<li>main: <code>&lt;main&gt;身体&lt;/main&gt;</code> </li>
+<li>section : <code>&lt;section&gt;定义文档中的区段 区域&lt;/section&gt;</code></li>
+<li>footer <code>&lt;footer&gt;尾部&lt;/footer&gt;</code></li>
+</ul>
+<h3 id="inputtype"><a name="user-content-inputtype" href="#inputtype" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>input其他的类型type：</h3>
+<ol>
+<li>text ：文本输入框</li>
+<li>password ：密码</li>
+<li>button ：按钮</li>
+<li>checkbox ：复选</li>
+<li>radio ：单选</li>
+<li>submit ：提交</li>
+<li>reset ：重置</li>
+<li>file ：文件</li>
+<li>email ：输入邮箱地址 检测@(自带验证,输入格式不正确,会有提示)</li>
+<li>url ：URL地址</li>
+<li>number ：只能输入数字 还有e</li>
+<li>range ：范围 默认0~100</li>
+<li>date ：日期</li>
+<li>month ：月</li>
+<li>color ：颜色</li>
+<li>search ：搜索</li>
+<li>tel ：电话</li>
+</ol>
+<h3 id="form"><a name="user-content-form" href="#form" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>form新表单属性</h3>
+<ol>
+<li>placeholder ：文本框提示 <code>placeholder="请输入姓名"</code></li>
+<li>multiple : 多选,需配合 <code>type="file"</code> ==&gt; <code>&lt;input type="file" multiple&gt;</code></li>
+<li>autocomplete : 自动完成(当您在输入域中输入时，自动完成（Autocomplete）部件提供相应的建议。在本实例中，提供了编程语言的建议选项) <ul>
+<li>需要设置name属性</li>
+<li>在点击提交过之后才能给提示</li>
+</ul>
+</li>
+<li>autofocus : 自动聚焦 <code>&lt;input type="email"&gt;</code>(一般一个页面只设置一个)</li>
+<li>required : boolean属性; 非空验证属性,在提交时会验证,是否输入了内容</li>
+<li>pattern : 自定义验证规则,正则表达式</li>
+<li>min,max: 限制最大数,最小数</li>
+<li>list : 值为datalist标签的ID名,设置属性关联<br />
+<pre><code class="js">&lt;input type=&quot;tel&quot; list=&quot;telList&quot; placeholder=&quot;请输入电话&quot;/&gt;
+&lt;datalist id=&quot;telList&quot;&gt;
+    &lt;option value=&quot;18119839292&quot;&gt;&lt;/option&gt;
+    &lt;option value=&quot;12343839292&quot;&gt;&lt;/option&gt;
+&lt;/datalist&gt;
+</code></pre></li>
+</ol>
+<h3 id="required"><a name="user-content-required" href="#required" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>自定义表单验证 (required)</h3>
+<pre><code class="html">&lt;form action=&quot;#&quot;&gt;
+    &lt;input type=&quot;tel&quot; name=&quot;tel&quot; id=&quot;telInput&quot; placeholder=&quot;请输入电话&quot; pattern=&quot;\d{4}&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+&lt;/form&gt;
+&lt;script&gt;
+    // 验证失败以后触发
+    document.getElementById(&quot;telInput&quot;).oninvalid = function(){
+        //自定义验证信息方法
+        this.setCustomValidity(&quot;请输入4个数字&quot;);
+    }
+    // 用户输入的时候触发
+    document.getElementById(&quot;telInput&quot;).oninput = function(){
+        var input = this.value;
+        var reg = /\d{4}/;
+        if(reg.test(input)){
+            //输入正确的提示信息
+        }
+        //清空提示信息 ,可解决oninvalid自定义提示信息一直显示的问题
+        this.setCustomValidity('');
+    }
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>音频,视频</h3>
+<ul>
+<li>video<ul>
+<li>src: 资源路径</li>
+<li>autoplay:自动播放</li>
+<li>controls:控制器</li>
+<li>loop:循环播放</li>
+<li>width:video标签宽度,视频宽度不变</li>
+<li>height:video标签高度,视频高度不变</li>
+<li>source:指定多个文件资源</li>
+<li>缺点:视频可以直接另存为&hellip;</li>
+</ul>
+</li>
+<li>audio<ul>
+<li>src: 资源路径</li>
+<li>autoplay:自动播放</li>
+<li>controls:控制器</li>
+<li>loop:循环播放</li>
+<li>source:指定多个文件资源</li>
+<li>不能设置width,height</li>
+<li>缺点:视频可以直接另存为&hellip;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="js">&lt;video controls autoplay loop width='200px' height='300px'&gt;
+    &lt;source src=&quot;movie1.ogg&quot;&gt;&lt;/source&gt;
+    &lt;source src=&quot;movie.mp4&quot;&gt;&lt;/source&gt;
+    您的版本过低,请升级下载 &lt;a href=&quot;#&quot;&gt;点击下载&lt;/a&gt;
+&lt;/video&gt;
+
+&lt;audio autoplay controls loop&gt;
+    &lt;source src='music/music.ogg'&gt;&lt;/source&gt;
+    &lt;source src='music/郝云 - 活着.mp3'&gt;&lt;/source&gt;
+&lt;/audio&gt;
+</code></pre>
+
+<h3 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>自定义属性</h3>
+<p>html标签中 我们能够添加自定义属性 ,但是不同的人,不同的命名风格会造成后期阅读以及维护的麻烦,HTML5中推出了一个推荐的数据格式<code>data-*</code>:给自定义的属性加一个前缀data. <br><br />
+例如: data-price, data-room, data-ab-youdao, data-xx-xxx-xx&hellip; <br><br />
+但在实际生成的时候,会去掉第一个<code>data-</code>,后面的中间的<code>-</code>,<code>字母变大写</code>;如:abYoudao,meatOneTwo&hellip; <br></p>
+<p><strong>element.dataset用于获取自动以标签属性</strong></p>
+<p>DOM获取自定义属性<br />
+<pre><code class="js">&lt;li id='noodle'  data-Vegetable='green' data-meat-Twoprice='20'   data-price='10' data-color='white'&gt;兰州拉面&lt;/li&gt;
+&lt;script&gt;
+    var noodle = document.querySelector(&quot;#noodle&quot;);
+    // 所有通过 data-添加的属性 都保存在 dataset这个属性中
+    console.log(noodle.dataset);
+    // 可以通过.语法获取
+    console.log(noodle.dataset.color);  // white
+    // 也能够通过 [key]的方式获取
+    console.log(noodle.dataset['price']);  // 10
+    // 获取 三块肉的价格  多个-拼接的属性
+    console.log(noodle.dataset['meatTwoprice']); // 20
+&lt;/script&gt;
+</code></pre></p>
+<h2 id="h5_1"><a name="user-content-h5_1" href="#h5_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>h5标签的兼容问题</h2>
+<h3 id="js"><a name="user-content-js" href="#js" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>使用js创建标签</h3>
+<p>不建议使用,可能需要创建许多标签<br />
+<pre><code class="js">&lt;script&gt;
+    var header = document.createElement(&quot;header&quot;);
+    document.body.appendChild(header)
+&lt;/script&gt;
+</code></pre></p>
+<p>使用js的方式兼容低版本IE <br>  <br />
+条件注释(hack写法),将上面的代码注释,当浏览器无法识别h5标签时,会执行条件注释中的语句<br><br />
+emmet语法 : <code>cc:ie6+tab</code></p>
+<pre><code class="js">// lte (less than equal) 小于等于
+// lt(小于)
+// gt(大于)
+// gte(大于等于)
+&lt;!--[if lte IE 6]&gt; //将6改为8,就可以兼容IE678
+    &lt;script&gt;
+        var header = document.createElement(&quot;header&quot;);
+        document.body.appendChild(header)
+    &lt;/script&gt;
+&lt;![endif]--&gt;
+</code></pre>
+
+<h3 id="html5shivjs"><a name="user-content-html5shivjs" href="#html5shivjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>插件 html5shiv.js</h3>
+<p>去GitHub下载html5shiv插件,然后直接引用html5shiv.js插件即可,再写h5新语义标签将能够被低版本的IE兼容</p>
+<pre><code class="js">&lt;script src=&quot;html5shiv.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>在低版本的IE中完成创建标签的功能 , 并且会自动添加上display:block,有多个的话,也会自动帮助我们生成</p>
+<pre><code class="html">&lt;!-- 使用条件注释 让下列js文件只在低版本 的ie中导入 --&gt;
+&lt;!--[if lte IE 6]&gt;
+    &lt;script src=&quot;html5shiv.js&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+</code></pre>
+
+<h3 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>功能标签：</h3>
+<ul>
+<li>video : <code>&lt;video src="" autoplay自动播放 controls控制播放 loop是否重复播放 preload是否自动加载&gt;定义视频&lt;/video&gt;</code></li>
+<li>audio : <code>&lt;audio src=""&gt;定义音频&lt;/audio&gt;</code></li>
+<li>mark : <code>&lt;mark&gt;标记&lt;/mark&gt;</code></li>
+<li>iframe : <code>&lt;iframe src="" frameborder="0"&gt;内嵌网页框架&lt;/iframe&gt;</code></li>
+<li>canvas : <code>&lt;canvas&gt;定义图形提供画布&lt;/canvas&gt;</code></li>
+</ul>
+<h2 id="css3"><a name="user-content-css3" href="#css3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CSS3</h2>
+<h3 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>浏览器兼容</h3>
+<ul>
+<li>-o-属性 : opera</li>
+<li>-ms-属性 : IE</li>
+<li>moz-属性  : Firefox</li>
+<li>webkit-属性  : safari和chrome</li>
+</ul>
+<h3 id="_6"><a name="user-content-_6" href="#_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>属性选择器</h3>
+<pre><code>```
+属性名为att
+E[att]:        包含att属性
+E[att="val"]:  属性值为val
+E[att~="val"]: 属性值使用空格进行分割,有一个val
+E[att^="val"]: 属性值以val开头
+E[att$="val"]: 属性值以val结尾
+E[att*="val"]: 属性中包含val
+E[att|="val"]: 属性以'-'分割,其中有val值(如果属性只有val,那么也会被选中)
+```
+</code></pre>
+<p>实例:</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    /* 包含skill属性 */
+    li[skill]{                    /* &lt;li skill=&quot;喷火&quot;&gt;葫芦娃&lt;/li&gt; */
+        background-color: red;
+    }
+    /* color属性为white */
+    li[color = &quot;white&quot;]{          /* &lt;li color = &quot;white&quot;&gt;海尔兄弟&lt;/li&gt; */
+        background-color: blue;
+    }
+    /* color属性以空分割,有一个red */
+    li[color~=&quot;red&quot;]{            /* &lt;li color = &quot;blue red&quot;&gt;舒克和贝塔&lt;/li&gt; */
+        background-color: orange;
+    }
+    /* color属性以bla开头 */
+    li[color^=&quot;bla&quot;]{    /* &lt;li color = &quot;black-orange&quot;&gt;大头儿子小头爸爸&lt;/li&gt; */
+        border: 10px solid #0094ff;    /* &lt;li color = &quot;black&quot;&gt;黑猫警长&lt;/li&gt; */
+    }
+    /* color属性以ge结尾 */  
+    li[color$=&quot;ge&quot;]{  /* &lt;li color = &quot;black-orange&quot;&gt;大头儿子小头爸爸&lt;/li&gt; */
+        font-size: 32px;
+    }
+    /* color属性中包含orange */
+    li[color*=&quot;orange&quot;]{ /* &lt;li color = &quot;black-orange&quot;&gt;大头儿子小头爸爸&lt;/li&gt; */
+        color:orange;
+    }
+    /* color属性以'-'分割,包含black,如果只有black,也是 */
+    li[color|=&quot;black&quot;]{  /* &lt;li color = &quot;black-orange&quot;&gt;大头儿子小头爸爸&lt;/li&gt; */
+        background-color: black;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;ul&gt;
+      &lt;li skill=&quot;喷火&quot;&gt;葫芦娃&lt;/li&gt;
+      &lt;li color = &quot;black&quot;&gt;黑猫警长&lt;/li&gt;
+      &lt;li color = &quot;white&quot;&gt;海尔兄弟&lt;/li&gt;
+      &lt;li color = &quot;blue red&quot;&gt;舒克和贝塔&lt;/li&gt;
+      &lt;li color = &quot;white gray&quot;&gt;喜羊羊与灰太狼&lt;/li&gt;
+      &lt;li color = &quot;black-orange&quot;&gt;大头儿子小头爸爸&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3 id="_7"><a name="user-content-_7" href="#_7" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>伪类选择器</h3>
+<h4 id="_8"><a name="user-content-_8" href="#_8" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>结构伪类</h4>
+<pre><code>```
+E:first-child：父元素第一个子元素,并且是E标签
+E:last-child：父元素最后一个子元素,并且是E标签
+
+E:nth-child(n)： 第n个子元素，计算方法是E元素的全部兄弟元素；
+E:nth-last-child(n)： 跟E:nth-child(n)类似 ，只是倒着计算；
+    n从0开始
+    其中n的取值范围是：0，1,2,3,4...线性累加
+    可以传入表达式，比如2n,2n+1等等
+    可以传入特殊字符：even(偶数) odd(奇数)
+
+若E不是父元素中对应的first-child,last-child,,则不能实现对应关系,若不考虑E标签以为的其他F标签元素,则应该用first-of-child,last-of-child,nth-of-child()
+
+E:empty 指的是E标签没有子元素，并且内容为空
+E:not(选择器)：指的是，不满足括号内选择器条件的元素E
+```
+</code></pre>
+<ul>
+<li>例子</li>
+</ul>
+<pre><code class="css">li:first-child{              &lt;!-- 父元素中第1个元素,并且为li标签, --&gt;
+    color: red;
+}
+li:last-child{               &lt;!-- 父元素中最后1个元素,并且为li标签 --&gt;
+    color:red;
+}
+li:nth-child(2){              &lt;!-- 父元素中第2个元素,并且为li标签 --&gt;
+    color:blue;
+}
+li:nth-child(2n){             &lt;!-- 父元素中第2,4,6,8...个元素,并且为li标签 --&gt;
+    color: blue;
+}
+li:nth-child(2n+1){           &lt;!-- 父元素中第1,3,5,7...个元素,并且为li标签 --&gt;
+    color:red;
+} 
+li:nth-last-child(1){         &lt;!-- 父元素中倒数第1个元素,并且为li标签 --&gt;
+    background-color: pink;
+}
+li:nth-last-child(2){         &lt;!-- 父元素中最后2个元素,并且为li标签 --&gt;
+    background-color: yellow;
+}
+/*奇数*/
+li:nth-child(odd){            &lt;!-- 父元素中最后奇数个元素,并且为li标签 --&gt;
+    background-color: pink;
+}
+/*偶数*/
+li:nth-child(even){            &lt;!-- 父元素中最后偶数个元素,并且为li标签 --&gt;
+    background-color: skyblue;
+}
+/* not之后的括号内是选择器:li标签没有sex属性的,全部获取*/
+li:not([sex]){
+    background-color: hotpink;
+}
+&lt;!-- 没有子元素的li标签 --&gt;
+li:empty{
+    background-color: hotpink;
+}
+</code></pre>
+
+<pre><code>```
+E:first-of-type : 父元素中挑出所有E标签,然后选择第1个
+E:last-of-type :  父元素中挑出所有E标签,然后选择最后1个
+E:nth-of-type(n) :父元素中挑出所有E标签,然后选择第n个
+```
+</code></pre>
+<ul>
+<li>例子</li>
+</ul>
+<pre><code class="html">h3:first-of-type{            &lt;!-- 父元素中的所有h3标签,并且是h3标签的第一个 --&gt;
+    background-color: orange;
+}
+h3:last-of-type{          &lt;!-- 父元素中的所有h3标签,并且是h3标签的最后一个 --&gt;
+    font-size: 8px;
+    color: red;
+}
+h3:nth-of-type(3){          &lt;!-- 父元素中的所有h3标签,并且是h3标签的第3个 --&gt;
+    background-color: hotpink
+}
+</code></pre>
+
+<h4 id="_9"><a name="user-content-_9" href="#_9" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>目标伪类</h4>
+<pre><code>`E:target:选中当前锚点`
+</code></pre>
+<h3 id="_10"><a name="user-content-_10" href="#_10" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>伪元素选择器</h3>
+<pre><code>```
+E:first-letter/E::first-letter     设置对象内的第一个字符的样式
+E:first-line/E::first-line         设置对象内的第一行的样式
+
+E:before/E::before                 设置在对象前（依据对象树的逻辑结构）发生的内容。用来和content属性一起使用
+E:after/E::after                   设置在对象后（依据对象树的逻辑结构）发生的内容。用来和content属性一起使用
+
+{content: '';
+display: block;
+position: absolute;}  //结合::before和::after一起使用
+
+E::placeholder (CSS3新增属性)       设置对象文字占位符的样式
+E::selection   (CSS3新增属性)       设置对象被选择时的颜色
+```
+</code></pre>
+<h4 id="first-letterfirst-line"><a name="user-content-first-letterfirst-line" href="#first-letterfirst-line" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>first-letter和first-line例子</h4>
+<p>快速生成测试文本,emmet语法 : lorem + tab</p>
+<pre><code>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minimveniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+p::first-letter{
+    background-color: hotpink;
+}
+
+p::first-line{
+    background-color: orange;
+}
+</code></pre>
+
+<h4 id="beforeafter"><a name="user-content-beforeafter" href="#beforeafter" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>before和after示例</h4>
+<pre><code>&lt;style&gt;
+    div{
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        border: 1px solid gray;
+        position: relative;
+    }
+    /* 伪元素选择器
+        1.content 只要设置了 就能够看到
+            内容不收限制 可以写空字符串
+        2.伪元素是行内元素 为了设置宽高 
+            需要变为块
+            display:block;
+            position:absolute;
+        3.单标签不支持伪元素选择器
+        4.伪元素选择器的作用
+        作用是
+            在不改变页面html结构的基础上,为其添加标签
+        5.就只提供了 before 跟after 两个伪元素选择器
+            只能添加这两个 没有什么 middle center等等写法
+     */
+    div::before{
+        /* content属性 必须要设置 */
+        content: '';
+        display: block;
+        position: absolute;
+        background: url('images/sprites.png') no-repeat;
+        width: 20px;
+        height: 80px;
+        left: -30px;
+    }
+    div::after{
+        content: '';
+        background-color: orange;
+        width: 20px;
+        height: 80px;
+        position: absolute;
+        right: -30px;
+    }
+    input::before{
+        content: '123y';
+    }
+&lt;/style&gt;
+</code></pre>
+
+<h4 id="placeholdercss"><a name="user-content-placeholdercss" href="#placeholdercss" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>placeholder例子:css兼容</h4>
+<pre><code>&lt;input type=&quot;text&quot; placeholder=&quot;占位符&quot; /&gt;
+
+input::-webkit-input-placeholder {     
+    color: #999;
+}
+input:-ms-input-placeholder {          // IE10+
+    color: #999;
+}
+input:-moz-placeholder {               // Firefox4-18
+    color: #999;
+}
+input::-moz-placeholder {              // Firefox19+
+    color: #999;
+}
+</code></pre>
+
+<h3 id="css"><a name="user-content-css" href="#css" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CSS新样式</h3>
+<h4 id="_11"><a name="user-content-_11" href="#_11" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>边框圆角</h4>
+<p><strong>border-radius</strong></p>
+<pre><code>```
+合写
+border-radius:10px;           /*设置四周的圆角*/
+border-radius: 50px 10px;     /*上左下右,上右下左 */
+border-radius: 50px 30px 10px;   /*上左,上右下左,下右*/
+border-radius: 50px 40px 30px 20px;  /*上左,上右,下右,下左*/
+border-radius: 50px/100px;     /*上下的圆角/左右的圆角*/
+
+分开写
+border-top-left-radius: 40px;    /*上左*/
+border-top-right-radius: 10px;   /*上右*/
+border-bottom-left-radius: 20px;  /*下左*/
+border-bottom-right-radius: 50px; /*下右*/
+```
+</code></pre>
+<h4 id="_12"><a name="user-content-_12" href="#_12" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>边框阴影</h4>
+<p><strong>box-shadow</strong></p>
+<p>可选值:</p>
+<pre><code>+ h-shadow: 必需。水平阴影的位置。允许负值。
++ v-shadow: 必需。垂直阴影的位置。允许负值。
++ blur:     可选。模糊距离。
++ spread:   可选。阴影的尺寸
++ color:    可选。阴影的颜色。请参阅 CSS 颜色值。
++ inset:    可选。将外部阴影 (outset) 改为内部阴影
+</code></pre>
+<p>写法:</p>
+<pre><code>```
+box-shadow:-10px 20px red;    水平-10,垂直20,阴影颜色红
+box-shadow: 5px 5px 20px pink;
+        /*x偏移值,y偏移值,影子四周模糊程度,影子颜色*/
+box-shadow: 5px 5px 0px 5px red;
+        /*x偏移值,y偏移值,影子四周模糊程度,影子额外的长度,影子颜色*/
+        /*影子默认跟元素一样大*/
+box-shadow: inset 0px 0px 100px yellow;
+        /*添加了inset以后,影子会往内部伸展,其他的都是一样的*/
+box-shadow: 5px 5px yellow,-5px -5px blue,10px 10px green;
+        /*多个影子的添加 只需要使用逗号分隔即可 */
+```
+</code></pre>
+<h4 id="_13"><a name="user-content-_13" href="#_13" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>字体阴影</h4>
+<p><strong>text-shadow</strong></p>
+<p>可选值:</p>
+<pre><code>+ h-shadow: 必需。水平阴影的位置。允许负值。
++ v-shadow: 必需。垂直阴影的位置。允许负值。
++ blur:     可选。模糊距离。如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许负值
++ color:    可选。阴影的颜色。请参阅 CSS 颜色值。
+</code></pre>
+<p>写法:</p>
+<pre><code>```
+text-shadow:5px 5px red
+        /*x偏移值,y偏移值,阴影颜色*/
+text-shadow:5px 5px 10px pink
+      /*x偏移值,y偏移值,阴影模糊程度,阴影颜色 */
+text-shadow:5px 5px red,10px 10px yellow; 
+        /*多个影子的添加 只需要使用逗号分隔即可 */
+```
+</code></pre>
+<h3 id="transition"><a name="user-content-transition" href="#transition" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>过渡属性 transition</h3>
+<ul>
+<li>transition-property : 检索或设置对象中的参与过渡的属性 <ul>
+<li>none : 不指定过渡的css属性 </li>
+<li>all : 所有可以进行过渡的css属性 </li>
+<li>指定要进行过渡的css属性 (border,color,font-size,width&hellip;)</li>
+</ul>
+</li>
+<li>transition-duration : 检索或设置对象过渡的持续时间 <ul>
+<li>time : 指定过渡的事件(2s, .5s, 100ms&hellip;)</li>
+</ul>
+</li>
+<li>transition-timing-function : 检索或设置对象中过渡的类型<ul>
+<li>linear： 线性过渡</li>
+<li>ease： 平滑过渡(默认)</li>
+<li>ease-in： 由慢到快</li>
+<li>ease-out： 由快到慢</li>
+<li>ease-in-out： 由慢到快再到慢 </li>
+<li>step-start： 等同于 steps(1, start) </li>
+<li>step-end： 等同于 steps(1, end)  </li>
+</ul>
+</li>
+<li>transition-delay : 检索或设置对象延迟过渡的时间 <ul>
+<li>time： 指定对象过渡的延迟时间 (2s, .3s, 100ms&hellip;)</li>
+</ul>
+</li>
+</ul>
+<pre><code>**合写**
+transition:过渡CSS属性 持续时间 动画方式 延迟时间;
+/* 多属性过渡组合写法  通过逗号分隔*/
+transition:过渡1,过渡2....
+</code></pre>
+
+<pre><code>transition: all 1s ease-in 1s;
+    /* 所有属性 1s动画 ease-in动画方式 延迟1s*/
+transition: all 1s;
+    /* 所有属性1s动画*/
+</code></pre>
+
+<h3 id="_14"><a name="user-content-_14" href="#_14" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>颜色设置</h3>
+<h4 id="rgba"><a name="user-content-rgba" href="#rgba" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>rgba</h4>
+<ul>
+<li>red:0-255</li>
+<li>green:0-255</li>
+<li>blue:0-255</li>
+<li>alpha:0-1(小数)</li>
+<li>注意,不使用a 那么认为没有透明度</li>
+</ul>
+<pre><code class="css">color:rgba(100, 100, 100, .5)
+color:rgb(100, 100, 100)
+</code></pre>
+
+<h4 id="hsla"><a name="user-content-hsla" href="#hsla" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>hsla</h4>
+<ul>
+<li>hue(色调) : 0-360</li>
+<li>saturation(饱和度):0-100%</li>
+<li>lightness(亮度):0-100%</li>
+<li>alpha(透明度):0-1(小数)</li>
+</ul>
+<pre><code class="css">color:hsla(308, 85%, 85%, 1);
+color:hsla(308, 85%, 85%);
+</code></pre>
+
+<h4 id="opacity"><a name="user-content-opacity" href="#opacity" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>opacity(不透明度)</h4>
+<p>opacity只能针对整个盒子设置透明度，子盒子及内容会继承父盒子的透明度 ，他是作为CSS的属性来使用的</p>
+<h4 id="transparent"><a name="user-content-transparent" href="#transparent" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>transparent(透明)</h4>
+<p>transparent始终完全透明，他是作为颜色的取值来使用<code>color:transparent</code></p>
+<h3 id="background"><a name="user-content-background" href="#background" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>渐变色 background</h3>
+<ul>
+<li>线性渐变(linear-gradient): 向下/向上/向左/向右/对角方向</li>
+<li><code>background: linear-gradient(direction, color-stop1, color-stop2, ...);</code></li>
+</ul>
+<pre><code class="css">/*语法组合方式 可以添加多个颜色*/
+background-image: linear-gradient(方向,开始颜色 开始位置 ,颜色2 开始位置,颜色3 开始位置.....);
+
+/* 具体代码  */
+
+background-image: linear-gradient(to top left,red,yellow);  /* 朝着 右上角 从红色到黄色*/
+
+background-image: linear-gradient(45deg,red,yellow);  /* 朝着 顺时针45度 从红色到黄色*/
+
+background-image: linear-gradient(45deg,red,yellow,green); /* 朝着 顺时针45度 红色,黄色,绿色*/
+
+
+background-image: linear-gradient(45deg,red 10px,yellow 20px); /* 朝着 顺时针45度 红色到 10px结束 黄色从 20px开始 */
+
+background-image: linear-gradient(45deg,red 10%,yellow 20%);  /* 朝着 顺时针45度 红色到10%结束 黄色从 20%开始 */
+</code></pre>
+
+<ul>
+<li>径向渐变(radial-gradient): 指的是以某个点作为圆心,向四周扩散的渐变</li>
+<li><code>background: radial-gradient(center, shape size, start-color, ..., last-color);</code></li>
+</ul>
+<pre><code class="css">/* 圆形渐变写法 */
+background:radial-gradient(半径  ,颜色1,颜色2等等);
+
+/* 椭圆渐变写法 */
+background:radial-gradient(横向半径,竖向半径  ,颜色1,颜色2等等);
+
+/*具体代码*/
+background:radial-gradient(100px,red,green);  /*半径100px 红色 绿色*/
+
+background:radial-gradient(100px 200px,red,green); /*横向半径100px 竖向半径200px 红色 绿色*/
+
+background:radial-gradient(100px 200px,red 10px,green 20px);/*横向半径100px  红色10px 绿色 20px*/
+
+background:radial-gradient(100px 200px,red 10%,green 10%); /*横向半径100px  红色10% 绿色20%*/
+</code></pre>
+
+<h3 id="transform2d"><a name="user-content-transform2d" href="#transform2d" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>transform(2D变换)</h3>
+<pre><code>+ transform:translate(x, y);     移动   x为x轴方向移动,y是-y轴方向移动
++ transform:scale(x, y);         缩放   x为宽度缩放比例,y是高度缩放比例
++ transform:rotate(angle);       旋转   传递的是角度,360deg是一圈
++ transform:skew(xAngle, yAngle);扭曲   斜方向扭曲,传递的是角度,第2个参数不传默认为0
+
+```
+合写
+transform:translate(10px, 10px)  rotate(180deg) scale(1.5, .5);
+```
+</code></pre>
+<p><strong>transform-origin</strong> : 移动时,以什么原点作为标准</p>
+<pre><code>```
+transform-origin:50px;       /*x:50px y:中心 作为原点*/
+
+transform-origin:50px 50px;   /*x:50px y:50px 作为原点*/
+
+transform-origin:10% 20%;     /*x:10% y:20% 作为原点*/
+
+/* 传入单词 
+可选:top,left,right,center,bottom
+*/
+transform-origin:right top;   /* 左上 作为原点 */
+/* 中心作为原点 */
+transform-origin:center center;
+```
+</code></pre>
+<h2 id="_15"><a name="user-content-_15" href="#_15" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>流式布局</h2>
+<p>即百分比布局。（宽度， 高度，边距，rem，定位值）<br><br />
+<code>尺寸百分比 = 目标元素的宽度（高度）/ 父级的宽高</code> <br><br />
+<code>定位值百分比 = 目标元素的定位值 / 父级的宽高</code> <br><br />
+margin和padding / 父级的宽度</p>
+<p>em, rem<br />
+- em: 针对父级来设置自身<br />
+- rem: 针对html</p>
+<h2 id="_16"><a name="user-content-_16" href="#_16" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>媒体查询(响应式布局必选)</h2>
+<p>可以根据不同屏幕尺寸，动态的修改网页布局以及样式，是响应式网站不可缺少的一部分<br><br />
+only 可以省略 多个条件用and相连<br><br />
+@media only screen and (min-width:500px) and (max-width:700px){......} <br> </p>
+<p><code>&lt;link rel="stylesheet" href="" media="screen and (min-width:500px) and (max-width:700px)"&gt;</code></p>
+<h2 id="_17"><a name="user-content-_17" href="#_17" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>响应式网站</h2>
+<p>由两种办法完成响应式网站, 流式布局和媒体查询，通常情况下相辅相成共同完成响应式网站。</p>
+<h2 id="_18"><a name="user-content-_18" href="#_18" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>前缀</h2>
+<p>腾讯：国内唯一有自己内核的公司，X5。（X5的浏览器内核是基于早起的webkit内核开发出来的，而后自己优化。QQ浏览器 微信）<br />
+- -webkit-: 谷歌前缀，谷歌内核（猎豹 360 safari）<br />
+- -o-: 欧朋 （已经摒弃自己的内核，转战谷歌的阵营）<br />
+- -ms-: 微软 ie 斯巴达<br />
+- -moz-: 火狐 ff</p></article></body></html>

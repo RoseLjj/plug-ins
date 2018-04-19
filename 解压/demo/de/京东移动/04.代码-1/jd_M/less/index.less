@@ -1,0 +1,210 @@
+// 定义变量 颜色
+@jd_red:#f10215;
+
+
+body{
+    background-color:#f5f5f5 ;
+}
+.jd_container{
+    width: 100%;
+}
+
+
+// 顶部的 搜索栏 
+.jd_header{
+    width: 100%;
+    height: 40px;
+    position:fixed;
+    background-color: @jd_red;
+    // 使用padding 将内容 压缩
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 5px;
+    
+    /* 修改层级关系 */
+    z-index: 998;
+    >a{
+        position:absolute;
+        line-height: 40px;
+        color:white;
+        width: 60px;
+        text-align: center;
+    }
+    .logo{
+        left:0;
+        top:0;
+    }
+    .login{
+        right: 0;
+        top:0;
+    }
+    .search{
+        width: 100%;
+        height: 30px;
+        border-radius: 15px;
+        padding-left: 10px;
+    }
+}
+
+
+// 轮播图的布局
+/* 轮播图布局 */
+.jd_banner{
+    overflow: hidden;
+    position: relative;
+    .banner_imgs{
+        /* 10倍屏幕宽度 */
+        width: 1000%;
+        li{
+            /* 一倍的屏幕宽度 */
+            width: 10%;
+            a{
+                display: block;
+                width: 100%;
+                img{
+                  display: block;
+                  width: 100%;  
+                }
+            }
+        }
+    }
+        
+    /* 轮播图的索引 */
+   .banner_index{
+       position: absolute;
+       bottom: 15px;
+       left:50%;
+       margin-left: -64px;
+       li{
+           float: left;
+           width: 6px;
+           height: 6px;
+           border:1px solid white;
+           border-radius: 50%;
+           margin: 0 5px;
+       }
+   }
+}
+
+/* 导航栏 */
+.jd_nav{
+    border-bottom: 1px solid #CCCCCC;
+    background-color: white;
+    ul{
+        width: 100%;
+        padding-top: 10px;
+        li{
+            float:left ;
+            width: 25%;
+            a{
+                display: block;
+                width: 100%;
+                img{
+                    width: 35%;
+                    display: block;
+                    margin:0 auto
+                }
+                p{
+                    font-size:12px;
+                    text-align: center;
+                    line-height:30px ;
+                }
+            }
+        }
+    }
+}
+
+
+/*京东 主要内容区域*/
+.jd_main{
+    padding:10px 5px;
+    /* 子元素的 div */
+    >div{
+       /* 最小也有这么高 能够被撑大 */
+       min-height:100px;
+       
+       background-color: white; 
+       margin-bottom: 10px;
+       /* 使用阴影 制作 若隐若现的边框 */
+      -webkit-box-shadow:0 0 1px #ccc ;
+      box-shadow:0 0 1px #ccc;
+    }
+    
+}
+/* 秒杀区域样式 为了降低权重 所以 移出来 */
+.secondKill{
+   .main_header{
+       /* 内容压缩 */
+        padding-top: 10px;
+       
+       .clock{
+           padding: 0 5px;
+       }
+       .font{
+           padding: 0 5px;
+           color:@jd_red;
+           font-size:14px;
+       }
+       .cutDownTime{
+           
+           span{
+               background-color: black;
+               color:white;
+               padding: 0 2px;
+           }
+            /* 索引为 3 根6的 span 正好是 : */
+           span:nth-child(3n){
+               background-color: transparent;
+               color:black;
+           }
+       }
+       
+       .more{
+           color:gray;
+           font-size:14px;
+           padding-right: 15px;
+       }
+   } 
+   
+   .main_bottom{
+       padding-top: 10px;
+       ul{
+           li{
+               float: left;
+               /* 一行3个 */
+              width: 33.3333%;
+              text-align: center;
+              a{
+                  border-right: 1px solid #CCCCCC;
+                  display: block;
+                  width: 100%;
+                  img{
+                      display: block;
+                      width: 60%;
+                      margin: 0 auto;
+                      
+                  }
+              }
+              
+              /* p标签跟a是平级的 */
+             p{
+                 font-size:12px;
+                 padding: 3px 0;
+             }
+             p:first-of-type{
+                 color:@jd_red;
+             }
+             p:last-of-type{
+                 color:black;
+                 text-decoration: line-through;
+             }
+              
+           }
+           li:last-child{
+               a{
+                   border-right: none;
+               }
+           }
+       }
+   }
+}

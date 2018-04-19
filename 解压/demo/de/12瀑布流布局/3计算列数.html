@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            float: left;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="container" class="container">
+    <!--(.box>img[src="images/P_00$.jpg"])*9-->
+    <div class="box"><img src="images/P_000.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_001.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_002.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_003.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_004.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_005.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_006.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_007.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_008.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_009.jpg" alt=""/></div>
+</div>
+<script>
+    //因为将来要涉及到图片的高度 所以即使写在下面也要写在onload里面
+    window.onload = function () {
+        //找人
+        var container = document.getElementById("container");
+        var boxes = container.children;//所有的盒子
+        //3.计算第一行有多少张图片 计算一共有多少列
+        //window.innerWidth包括滚动条的宽度 我们这里只要页面的宽度
+        var pageWidth = document.documentElement.clientWidth;//页面宽度
+        //一个盒子的宽度
+        var boxWidth = boxes[0].offsetWidth;
+        //计算列数 列数=页面的宽度/box的宽度
+        //需要向下取整 因为图片都是整数
+        var column = Math.floor(pageWidth / boxWidth);
+        console.log(column);
+    };
+</script>
+</body>
+</html>

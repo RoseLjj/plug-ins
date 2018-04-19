@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html,body{
+				height: 100%;
+			}
+			body{
+				margin: 0;
+				border:10px dashed gray;
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+</html>
+
+<script type="text/javascript">
+	// 不在次方法中 阻止默认行为 ondrop方法 不会调用
+	document.body.ondragover = function(event){
+		console.log('ondragover触发');
+		event.preventDefault();
+	}
+	
+	// 阻止默认行为
+	// 图片拖进来以后 为body换肤
+	document.body.ondrop = function(event){
+		console.log('drop触发');
+		
+		// 获取丢进来的图片
+		console.log(event);
+		
+		// files 是一个数组 
+		console.log(event.dataTransfer.files);
+		
+		// 获取丢进来的文件
+		var dropFile =event.dataTransfer.files[0];
+		
+		// fileReader 读取文件
+		// 创建对象
+		var reader = new FileReader;
+		
+		// 调用读取方法
+		reader.readAsDataURL(dropFile);
+		
+		// 注册事件
+		reader.onload = function (){
+			// 在事件中 获取读取到的内容
+			// 设置给body
+//			reader.result;
+			document.body.style.background = 'url('+ reader.result +')no-repeat center /cover';
+		}
+		
+		
+		event.preventDefault();
+	}
+</script>

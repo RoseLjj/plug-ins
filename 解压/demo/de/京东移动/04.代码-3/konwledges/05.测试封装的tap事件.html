@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body,html{
+				height: 100%;
+			}
+			body{
+				background-color: yellowgreen;
+				margin: 0;
+			}
+		</style>
+		<script src="tap.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function myCallback(event){
+				console.log('回调函数被触发'+event)
+			}
+		
+			window.onload = function (){
+				// 测试tap事件
+				// 参数1 绑定的dom元素
+				// 参数2 触发成功的回调事件
+				//function heima_tap(dom,callBack){
+					
+				heima_tap(document.body,myCallback);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

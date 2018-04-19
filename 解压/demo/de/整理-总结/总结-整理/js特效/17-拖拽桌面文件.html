@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			.box {
+				width:800px;
+				height:500px;
+				border:5px dashed red;
+			}
+        </style>
+    </head>
+    <body>
+    	<div class="box"></div>
+    </body>
+    <script>
+    	//默认行为是拖拽桌面文件会使浏览器直接以打开文件的形式查看文件
+    	//	1.阻止默认行为
+    	document.querySelector(".box").ondragover = function(e){
+    		e.preventDefault();
+    	}
+    	//  1.阻止默认行为,与上面代码一起才能同时起作用
+    	document.querySelector(".box").ondrop = function(e){
+    		e.preventDefault();
+    		// 2.获取拖拽进来的文件
+    		var dropDom = e.dataTransfer.files[0];
+    		// 3.1 创建读取文件对象
+    		var reader = new FileReader();
+    		// 3.2 调用读取方法
+    		reader.readAsDataURL(dropDom);
+    		// 3.3 注册事件
+    		reader.onload = function(){
+    			document.querySelector(".box").style.background = 'url('+ reader.result +') no-repeat center/cover'
+    		}
+    	}
+    </script>
+</html>

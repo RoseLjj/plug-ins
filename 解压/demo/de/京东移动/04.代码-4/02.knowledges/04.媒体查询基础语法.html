@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/* 默认的语法 */
+			
+			.header {
+				height: 44px;
+				background-color: yellow;
+			}
+			/* 添加媒体查询 */
+			
+			@media screen and (max-width:1100px) {
+				.header {
+					display: none;
+				}
+			}
+			
+			body {
+				background-color: orange;
+			}
+			/* 媒体查询 */
+			/* 这里写的是 条件 */
+			/* 小于 375的宽度 */
+			
+			@media screen and (max-width:375px) {
+				body {
+					background-color: skyblue;
+				}
+			}
+			
+			/* 大于 等于 620的时候 改变 */
+			@media screen and (min-width:620px) {
+				body {
+					background-color: yellowgreen;
+				}
+			}
+			
+			/* 条件有重合部分 那么 靠下的 会覆盖 上面的 */
+			@media screen and (min-width:620px) {
+				body {
+					background-color: hotpink;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="header"></div>
+	</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        html, body, ul, ul li {
+            width: 100%;
+            height: 100%;
+        }
+
+        ol {
+            position: fixed;
+            top: 50px;
+            left: 50px;
+        }
+
+        ol li {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<ol>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ol>
+<script>
+    //找人
+    var ul = document.getElementsByTagName("ul")[0];
+    var ulLis = ul.children;
+    var ol = document.getElementsByTagName("ol")[0];
+    var olLis = ol.children;
+    //让ul和对应的ol里的背景色一样
+    var arr = ["red", "orange", "yellow", "green", "blue"];
+    for (var i = 0; i < arr.length; i++) {
+        ulLis[i].style.backgroundColor = arr[i];
+        olLis[i].style.backgroundColor = arr[i];
+    }
+
+    //2.点击ol中的li 让窗口跑到 对应的ul中的li的位置
+    for (var j = 0; j < olLis.length; j++) {
+        olLis[j].index = j;
+        olLis[j].onclick = function () {
+            //让窗口跑到 对应的ul中的li的位置
+            //目标 和点击的ol中的li对应的ul中的li的offsetTop
+            var target = ulLis[this.index].offsetTop;
+            window.scrollTo(0, target);
+        };
+    }
+</script>
+</body>
+</html>

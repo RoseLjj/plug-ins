@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>地图</title>
+    </head>
+    <body>
+    <input type="button" value="点击">
+    </body>
+    <script>
+    	document.querySelector("input").onclick = function(){
+    		console.log(2);
+    		//参数1:定位成功的回调函数
+    		window.navigator.geolocation.getCurrentPosition(function(position){
+    			console.log(1);
+    			console.log("定位成功"+position)
+    			// 2. 获取当前地理位置的经纬度
+    			console.log("经度"+position.coords.longitude)
+    			console.log("纬度"+position.coords.latitude)
+    		});
+    		
+    		
+    	}
+    </script>
+</html>

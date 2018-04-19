@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="msdropdown/dd.css" />
+    </head>
+    <body>
+        <div class="container">
+			<header>
+				<h1>image dropdown<span>jQuery Plugin</span></h1>
+				<nav class="codrops-demos">
+					<a href="index.html">Index</a>
+					<a class="current-demo" href="normal.html">Simple</a>
+					<a href="cssSprite.html">CSS Sprite</a>
+					<a href="multipleSkin.html">Multiple skin</a>
+					<a href="objectOriented.html">Object Oriented Approch</a>
+					<a href="mouse-events.html">Mouse Events</a>
+				</nav>
+			</header>
+			<section id="dg-container" class="dg-container">
+				<div class="dg-wrapper">
+					<h1>Javascript image dropdown <span id="ver"></span> </h1>
+					<div class="sel">
+						<form name="myform" id="myform"  action="getvalue.php" enctype="multipart/form-data" method="post">
+							<select name="websites3" id="websites3" style="width:200px;">
+						      <option value="calendar" selected="selected" >Calendar</option>
+						      <option value="shopping_cart" title="icons/icon_cart.gif">Shopping Cart</option>
+						      <option value="cd" >CD</option>
+						      <option value="email" title="icons/icon_email.gif">Email</option>
+						      <option value="faq" title="icons/icon_faq.gif">FAQ</option>
+						      <option value="games" title="icons/icon_games.gif">Games</option>
+						      <option value="music" title="icons/icon_music.gif">Music</option>
+						      <option value="phone" title="icons/icon_phone.gif">Phone</option>
+						      <option value="graph" title="icons/icon_sales.gif">Graph</option>
+						      <option value="secured" title="icons/icon_secure.gif">Secured</option>
+						      <option value="video" title="icons/icon_video.gif">Video</option>
+						    </select>
+						</form>
+					</div>
+				</div>
+
+			</section>
+        </div>
+        <script type="text/javascript" src="msdropdown/js/jquery.js"></script>
+		<script type="text/javascript" src="msdropdown/js/jquery.dd.js"></script>
+		<!-- <script type="text/javascript" src="msdropdown/js/test.js"></script> -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+			try {
+					oHandler = $("body select").msDropDown().data("dd");
+					//alert($.msDropDown.version);
+					//$.msDropDown.create("body select");
+					$("#ver").html($.msDropDown.version);
+					} catch(e) {
+						alert("Error: "+e.message);
+					}
+			})
+		</script>
+    </body>
+</html>

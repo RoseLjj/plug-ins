@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .rocket {
+            position: fixed;
+            right: 50px;
+            bottom: 100px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<span class="rocket" id="backTop">
+    <img src="images/Top.jpg" alt=""/>
+</span>
+
+<div>
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+
+    <p>开始页面内容</p>
+</div>
+<script>
+    var timer = null;
+    //找人
+    var backTop = document.getElementById("backTop");
+    //需求：一开始小火箭不显示 滚动一点之后再显示 点击小火箭 回调顶部
+    //窗体滚动的时候 判断scrollTop如果大于0就显示小火箭 否则就隐藏
+    window.onscroll = function () {
+        /*if (scroll().top > 0) {
+         backTop.style.display = "block";
+         } else {
+         backTop.style.display = "none";
+         }*/
+        backTop.style.display = scroll().top > 0 ? "block" : "none";
+    };
+    //点击火箭要回去
+    backTop.onclick = function () {
+        //window.scrollTo(0, 0);
+        //渐渐的滚回去
+        timer = setInterval(function () {
+            //step = (target-leader)/10
+            //leader = leader + step
+            var target = 0;
+            var leader = scroll().top;
+            var step = (target - leader) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            leader = leader + step;
+            console.log(leader);
+            window.scrollTo(0, leader);
+            if (leader === target) {
+                clearInterval(timer);
+            }
+        }, 15);
+
+    };
+
+    function scroll() {
+        return {
+            top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
+            left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0
+        };
+    }
+</script>
+</body>
+</html>

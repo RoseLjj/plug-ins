@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<img class="lazy" width="765" height="574" src="" data-original="img/4s1.jpg" alt=""/>
+<script src="js/jquery-1.11.0.js"></script>
+<script src="js/jquery.lazyload.js"></script>
+<script>
+    $(function () {
+        $("img.lazy").lazyload();
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            float: left;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="container" class="container">
+    <!--(.box>img[src="images/P_00$.jpg"])*9-->
+    <div class="box"><img src="images/P_000.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_001.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_002.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_003.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_004.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_005.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_006.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_007.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_008.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_009.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_000.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_001.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_002.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_003.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_004.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_005.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_006.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_007.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_008.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_009.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_000.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_001.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_002.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_003.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_004.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_005.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_006.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_007.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_008.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_009.jpg" alt=""/></div>
+</div>
+<script>
+    //因为将来要涉及到图片的高度 所以即使写在下面也要写在onload里面
+    window.onload = function () {
+        var container = document.getElementById("container");
+        var boxes = container.children;
+        var pageWidth = document.documentElement.clientWidth;
+        var boxWidth = boxes[0].offsetWidth;
+        var column = Math.floor(pageWidth / boxWidth);
+        console.log(column);
+        var arrHeight = [];
+        for (var i = 0; i < boxes.length; i++) {
+            if (i < column) {
+                arrHeight[i] = boxes[i].offsetHeight;
+            } else {
+                var minHeight = getMin(arrHeight).value;
+                var minHeightIndex = getMin(arrHeight).index;
+                boxes[i].style.position = "absolute";
+                boxes[i].style.left = boxes[minHeightIndex].offsetLeft + "px";
+                boxes[i].style.top = minHeight + "px";
+                arrHeight[minHeightIndex] = minHeight + boxes[i].offsetHeight;
+            }
+        }
+        //6.判断触底
+        //窗体滚动的时候 判断是否触底 如果触底了 就要动态加载图片了
+        window.onscroll = function () {
+            if (bottomed()) {
+                alert("该加载了");
+            }
+        };
+        function bottomed() {//判断是否触底的函数 如果触底了就返回true 否则返回false
+            //浏览器底部接触到了 最后一个盒子的顶部的时候就算触底了
+            //最后一个盒子的顶部是 最后一个盒子的offsetTop
+            //页面被卷去的头部的高度+浏览器窗口的高度 > 最后一个盒子的offsetTop （说明触底）
+            var scrollTop = window.pageYOffset;//页面被卷去的头部的高度
+            var clientHeight = window.innerHeight;//浏览器窗口的高度
+            //最后一个盒子 boxes[boxes.length-1]
+            //最后一个盒子的offsetTop
+            var lastBoxTop = boxes[boxes.length - 1].offsetTop;
+            if (scrollTop + clientHeight > lastBoxTop) {
+                return true;//触底了
+            } else {
+                return false;//还没触底
+            }
+        }
+
+    };
+
+    function getMin(arr) {
+        var min = {};
+        min.value = arr[0];
+        min.index = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (min.value > arr[i]) {
+                min.value = arr[i];
+                min.index = i;
+            }
+        }
+        return min;
+    }
+</script>
+</body>
+</html>

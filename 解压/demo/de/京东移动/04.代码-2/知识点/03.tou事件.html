@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--  视口属性 -->
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html,body{
+				height: 100%;
+				margin: 0;
+			}
+			body{
+				background-color: orange;
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	// 这个事件 只支持 移动端
+	// 添加touch事件
+	// 移动开始
+	document.body.addEventListener('touchstart',function (event){
+//		console.log('start');
+//		console.log(event);
+		// 打印 坐标点
+		console.log(event.touches[0].clientX+'||'+event.touches[0].clientY)
+
+	})
+	
+	// 移动中
+	document.body.addEventListener('touchmove',function (event){
+//		console.log('move');
+//		console.log(event);
+		console.log(event.touches[0].clientX+'||'+event.touches[0].clientY)
+	})
+	
+	// 移动结束
+	// end事件中 无法获取 坐标点
+	document.body.addEventListener('touchend',function (event){
+//		console.log('end');
+//		console.log(event);
+//		console.log(event.touches[0].clientX+'||'+event.touches[0].clientY)
+	})
+	
+</script>

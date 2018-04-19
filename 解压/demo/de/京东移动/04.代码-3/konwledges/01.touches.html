@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html,body{
+				height: 100%;
+				background-color: orange;
+			}
+			body{
+				margin: 0;
+				position: relative;
+			}
+			.clickDiv{
+				width: 40px;
+				height: 40px;
+				background-color: skyblue;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+	<img src="image/my.gif" alt="" />
+	</body>
+</html>
+<script type="text/javascript">
+	
+	// 定义全局
+	var startX = 0;
+	
+	// 记录 移动的距离
+	var moveX = 0;
+	
+	// 初始移动值 默认为0
+	var distanceX =0;
+	
+	// 获取飞机
+	var movePlane = document.querySelector('img');
+	
+
+	// 点击创建div
+	document.body.addEventListener('touchstart',function(event){
+		console.log('start'+event.touches[0].clientX+'|'+event.touches[0].clientY);
+		// 创建
+		var div = document.createElement('div');
+		
+		// 添加class
+		div.classList.add('clickDiv');
+		
+		// 添加到body上
+		document.body.appendChild(div);
+		
+		// 设置div的为位置
+		div.style.top = event.touches[0].clientY-20+'px';
+		div.style.left = event.touches[0].clientX-20 +'px';
+		
+		// 为起始的x坐标赋值
+		 startX = event.touches[0].clientX;
+		
+	})
+	
+	
+	document.body.addEventListener('touchmove',function(event){
+//		console.log('move'+event.touches[0].clientX+'|'+event.touches[0].clientY);
+		
+		// 计算差值
+		 moveX = event.touches[0].clientX -startX;
+		
+		// 赋值给飞机
+		movePlane.style.transform = 'translateX('+(moveX+distanceX)+'px)';
+		console.log('translateX('+(moveX+distanceX)+'px)');
+		
+	})
+	document.body.addEventListener('touchend',function(event){
+		// end事件中 无法获取 坐标
+//		console.log('end'+event.touches[0].clientX+'|'+event.touches[0].clientY);
+//		console.log('end');
+		
+		// 更新distanceX
+		distanceX = distanceX +moveX;
+	})
+</script>

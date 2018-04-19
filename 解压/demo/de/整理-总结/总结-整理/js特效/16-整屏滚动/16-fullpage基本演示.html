@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 基于jq插件一定要先导入 jq -->
+	<script type="text/javascript" src='js/jquery.min.js'></script>
+	<script type="text/javascript" src='js/jquery.fullPage.min.js'></script>
+	<script type="text/javascript">
+		// 调用 插件的方法 实现全屏幕布局
+		// 每一个页面 必须添加 section class 否则没用
+		//
+		// $(function(){
+		// 	    $('#dowebok').fullpage({
+		// 	    	// 加载完毕事件
+		// 	    	afterLoad:function(anchorLink,index ){
+		// 	    		// console.log('哈哈哈');
+		// 	    		console.log(anchorLink+'|||'+index);
+		// 	    		// jq的eq方法 是从0开始的
+		// 	    		// 传递给我的值 从1开始
+		// 	    		$('.section').eq(index-1).css('backgroundColor','hotpink');
+		// 	    	}
+		// 	    });
+		// });
+		window.onload = function(){
+			    $('#dowebok').fullpage({
+			    	// 加载完毕事件
+			    	afterLoad:function(anchorLink,index ){
+			    		// console.log('哈哈哈');
+			    		console.log(anchorLink+'|||'+index);
+			    		// jq的eq方法 是从0开始的
+			    		// 传递给我的值 从1开始
+			    		$('.section').eq(index-1).css('backgroundColor','hotpink');
+			    	}
+			    });
+		}
+	</script>
+	<style type="text/css">
+		body{
+			margin: 0;
+		}
+		.section{
+			background-color: orange;
+		}
+		h3{
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="dowebok">
+		    <div class="section first">
+		        <h3>第一屏</h3>
+		    </div>
+		    <div class="section">
+		        <h3>第二屏</h3>
+		    </div>
+		    <div class="section">
+		        <h3>第三屏</h3>
+		    </div>
+		    <div class="section">
+		        <h3>第四屏</h3>
+		    </div>
+	</div>
+</body>
+</html>

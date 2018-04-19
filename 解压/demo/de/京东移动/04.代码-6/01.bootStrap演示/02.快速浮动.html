@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>bs的模板</title>
+
+		<!-- Bootstrap -->
+		<link href="lib/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+		<!-- 小于ie9的时候 导入了 两个js -->
+		<!-- html5shiv.min.js  html5中 新语义标签 -->
+		<!-- 低版本的 ie中 也让 媒体查询语法 被支持 -->
+		<!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+		<style>
+			.bootstrap_heima {
+				border-top: 1px solid gray;
+				border-bottom: 1px solid gray;
+			}
+			.bootstrap_heima .pull-right{
+				padding-right: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- container 在不同的屏幕尺寸下 会有一个 固定的值
+			
+		bootstrap 已经帮助我们实现了 清除浮动 等一些 默认的样式 这样 内部元素就能够放心的进行浮动 自己起的类名 就没有该功能 -->
+		<!--container-fluid  width 100%的容器 -->
+		<!--<div class="container bootstrap_heima">-->
+		<div class="container-fluid bootstrap_heima"> 	
+			<div class="pull-left">我是左边的内容 ^_^^_^^_^^_^^_^^_^^_^^_^^_^^_^^_^</div>
+			<div class="pull-right hidden-xs">右边</div>
+		</div>
+	</body>
+
+</html>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="lib/js/jquery-1.12.4.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="lib/js/bootstrap.min.js"></script>

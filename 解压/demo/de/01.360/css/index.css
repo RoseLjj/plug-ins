@@ -1,0 +1,267 @@
+
+body{
+	margin: 0;
+}
+
+/* 首页 */
+.one{
+	background: deepskyblue;
+	padding-top: 100px;
+}
+
+.one .logo{
+	background: url('../images/logo.png') no-repeat center;
+	height: 186px;
+}
+
+.one .text{
+	text-align: center;
+	margin: 50px 0;
+}
+
+.one .info{
+	background: url('../images/info_1.png') no-repeat center;
+	height: 49px;
+}
+
+
+/* 第二页布局 */
+.two{
+	background: yellowgreen;
+
+}
+/* 
+	原因是 插件帮助我们自动生成了 一个 div 包裹内容
+ */
+.two>div{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.two .shield{
+	width: 500px;
+}
+.two .info{
+	background: url('../images/info_2.png') no-repeat center;
+	width: 635px;
+	height: 309px;
+}
+
+
+/* 页面3 */
+.three{
+	background: orange;
+}
+
+.three>div{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	/* 火箭需要定位 */
+	position: relative;
+	/* 干掉出去的火箭 */
+	overflow: hidden;
+}
+
+.three .info{
+	background: url('../images/info_3.png') no-repeat center;
+	width: 631px;
+	height: 278px;
+}
+
+.three .circle{
+	background: url('../images/circle.png') no-repeat center;
+	width: 453px;
+	height: 449px;
+}
+
+.three .rocket{
+	background: url('../images/rocket.png') no-repeat center;
+	width: 203px;
+	height: 204px;
+	/* 弹性布局 内部的元素 添加了 定位以后 就失去了 弹性布局的效果 */
+	position: absolute;
+
+	/* 默认移出去 */
+	bottom: -204px;
+	left: 0;
+
+	/* 移动的值 */
+	transform: translateX(950px) translateY(-450px);
+}
+
+
+/* 第四页 */
+.four{
+	background: limegreen;
+}
+
+.four>div{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+
+.four .info{
+	background: url('../images/info_4.png') no-repeat center;
+	width: 612px;
+	height: 299px;
+}
+
+.four .searchBox{
+	/* 根子元素的宽度一直 */
+	width: 529px;
+	/* 子元素的高度和 大一点 也没有关系 用户是看不到的  ^_^ */
+	height: 448px;
+
+	position: relative;
+}
+.four .searchBox>div{
+	position: absolute;
+}
+
+.four .searchBox .search{
+	background: url('../images/search.png') no-repeat center;
+	width: 529px;
+	height: 66px;
+}
+.four .searchBox .key{
+	/* 为了以后制作动画 */
+	background: url('../images/key.png') no-repeat ;
+	width: 99px;
+	height: 22px;
+	top: 22px;
+	left: 15px;
+}
+.four .searchBox .result{
+	background: url('../images/result.png') no-repeat center;
+	width: 529px;
+	height: 372px;
+	top: 66px;
+}
+
+
+
+
+/* 第五页 */
+.five{
+	background: lightskyblue;
+}
+.five>div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.five .info{
+	background: url('../images/info_5.png') no-repeat center;
+	width: 1077px;
+	height: 134px;
+}
+.five .browser{
+	background: url('../images/toolbar.png') no-repeat top left,
+		url('../images/extra.png') no-repeat bottom right ;
+	width: 1004px;
+	flex: 1;
+	position: relative;
+}
+
+/* 四根线 */
+.five .browser .line{
+	position: absolute;
+	background: white;
+}
+.top{
+	width: 100%;
+	height: 4px;
+	top: 0px;
+	left: 0px;
+}
+.bottom{
+	width: 100%;
+	height: 4px;
+	bottom: 0px;
+	left: 0px;
+}
+.left{
+	width: 4px;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+}
+.right{
+	width: 4px;
+	height: 100%;
+	top: 0px;
+	right: 0px;
+}
+
+
+/* 添加各个页面的动画效果 */
+
+/* 
+	又有one 又有 animation 才能够命中
+ */
+/*.one.animation{}*/
+
+/* 首页 text 中的 img动画 */
+/* 默认 margin 透明 */
+.one .text img{
+	margin: 0 10px;
+	opacity: 0;
+	transition: all 1s;
+}
+.one.animation .text img{
+	margin: 0 ;
+	opacity: 1;
+}
+
+/* 
+	又有two 又有 animation 才能够命中
+ */
+.two.animation{}
+
+/* 初始状态 */
+.two .shield img:nth-child(4){
+	transform: translateX(200px) translateY(200px) rotateZ(379deg);
+	transition: all 1s;
+}
+/* 动画状态 */
+.two.animation .shield img:nth-child(4){
+	transform: translateX(0px) translateY(0px) rotateZ(0deg);
+}
+
+
+/*  第四页动画 */
+/* 收起result */
+.four.animation{}
+
+.four .searchBox .result{
+	height: 0;
+	transition: all 1s 3s;
+}
+
+.four .searchBox .key{
+	width: 1px;
+	transition: all 1s 1.5s steps(5);
+}
+
+.four .searchBox {
+	transform:translateX(-150%);
+	transition: all 1s;
+}
+
+/* 动画效果 */
+.four.animation .searchBox{
+	transform: translateX(0);
+}
+
+.four.animation .searchBox .key{
+	width:99px;
+}
+
+.four.animation .searchBox .result{
+	height: 372px;
+}
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html,body{
+				height: 100%;
+				margin: 0;
+			}
+			body{
+				background-color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="image/my.gif"/>
+	</body>
+</html>
+
+<script type="text/javascript">
+
+	// 获取 移动的飞机
+	var movePlane = document.querySelector('img');
+	
+	
+	// 记录 开始的 x值
+	var startX = 0;
+	
+	// 记录 当前次 移动的距离
+	var moveX = 0;
+	
+	// 记录 上一次 移动的距离
+	var distanX = 0;
+	
+	// 记录 开始的 x值
+	var startY = 0;
+	
+	// 记录 当前次 移动的距离
+	var moveY = 0;
+	
+	// 记录 上一次 移动的距离
+	var distanY = 0;
+	
+	
+	document.body.addEventListener('touchstart',function(event){
+		
+		// 获取 开始的位置
+		startX = event.touches[0].clientX;
+		startY = event.touches[0].clientY;
+		
+	})
+	
+	
+	// 移动飞机
+	document.body.addEventListener('touchmove',function(event){
+		
+		// 获取 x 跟 y坐标
+		var x = event.touches[0].clientX;
+		
+		// 获取 移动的距离
+		 moveX = x - startX;
+		 
+		 // 获取 x 跟 y坐标
+		var y = event.touches[0].clientY;
+		
+		// 获取 移动的距离
+		 moveY = y - startY;
+		
+		// 修改 飞机的位置 top left
+		movePlane.style.transform = 'translate('+(moveX+distanX)+'px,'+(moveY+distanY)+'px)';
+		
+	})
+	
+	// end 获取不到 坐标点
+	document.body.addEventListener('touchend',function(event){
+		
+		// 打印结果
+		console.log('当前这一次 在x方向移动的距离为:'+moveX);
+		console.log('原始的距离为:'+distanX);
+		
+		// 将 此次 移动的 距离 记录下来
+		distanX = distanX + moveX;
+		
+		distanY = distanY + moveY;
+		
+		console.log('计算完毕之后 distanX:'+distanX);
+		
+	})
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var arr = [1, 2, 3, 4, 5];
+    //封装函数 能够获取数组中 最小值的值 以及 最小值的索引
+    function getMin(arr) {
+        var min = {};
+        min.value = arr[0];
+        min.index = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (min.value > arr[i]) {
+                min.value = arr[i];
+                min.index = i;
+            }
+        }
+        return min;
+    }
+    console.log(getMin(arr));
+    console.log(getMin(arr).value);
+    console.log(getMin(arr).index);
+
+
+</script>
+</body>
+</html>

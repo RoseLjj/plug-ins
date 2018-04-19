@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>bs的模板</title>
+
+		<!-- Bootstrap -->
+		<link href="lib/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+		<!-- 小于ie9的时候 导入了 两个js -->
+		<!-- html5shiv.min.js  html5中 新语义标签 -->
+		<!-- 低版本的 ie中 也让 媒体查询语法 被支持 -->
+		<!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    	<!-- 导入自己的css -->
+    	<!--  导入base-->
+    	<!-- 先导入 base.css -->
+    	<link rel="stylesheet" type="text/css" href="css/base.css"/>
+    	
+    	<!-- 后续可能会覆盖 base中的样式 所以要后倒入 -->
+    	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+    
+	</head>
+
+	<body>
+		<a href="" class="ticket wjs-font wjs-font-e915" >
+			<!-- 先渲染 上面的元素 -->
+			<div class="ticket_right">
+				<p>8%</p>
+				<p>年利率</p>
+			</div>
+			<!-- 添加字体图标 -->
+			<div class="ticket_left ">
+				<h3>新手体验标1002期</h3>
+			</div>
+		</a>
+	</body>
+
+</html>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="lib/js/jquery-1.12.4.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="lib/js/bootstrap.min.js"></script>

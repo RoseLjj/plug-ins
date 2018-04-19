@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>css电子表</title>
+    <style>
+    body {
+        font-size: 100px;
+        font-weight: bold;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <span id="hh"></span>:<span id="mm"></span>:<span id="ss"></span>
+    <script>
+    function $(selector) {
+        return document.querySelector(selector)
+    }
+
+    var hh = hh || $('#hh'),
+        mm = mm || $('#mm'),
+        ss = ss || $('#ss');
+    //No.1
+    //开始写代码
+    function update() {
+        setInterval(function() {
+            var d = new Date();
+            var hour = d.getHours();
+            var min = d.getMinutes();
+            var sec = d.getSeconds();
+            hh.innerHTML = hour;
+            mm.innerHTML = min;
+            ss.innerHTML = sec;
+        }, 1000)
+    }
+
+    update();
+    </script>
+</body>
+
+</html>

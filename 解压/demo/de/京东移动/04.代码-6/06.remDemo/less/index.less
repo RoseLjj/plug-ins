@@ -1,0 +1,62 @@
+@import 'base.less';
+@import 'font.less';
+@import 'screen.less';
+
+body{
+    background-color: #F7F4F1;
+     font-family: "宋体";
+}
+
+*{
+    box-sizing: border-box;
+}
+
+// 设置顶部的工具栏
+.container{
+    .toolBar{
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+    // 优惠券 容器的 样式
+    .tickets{
+        padding: 27/32rem 24/32rem 0;
+       // 设置优惠券的标题样式
+       .ticket_title{
+           overflow: hidden;
+           h3{
+               float: left;
+               margin: 0;
+               font-size:28/32rem;
+               font-weight: 400;
+           }
+           span{
+               float:right;
+               font-size:28/32rem;
+               color:#888;
+           }
+           margin-bottom:30/32rem;
+       }
+       // 优惠券
+       .card{
+           border:4/32rem dashed #ccc;
+           height: 224/32rem;
+           background-color: white;
+           a{
+               display: block;
+               text-align: center;
+               text-decoration: none;
+               color:#ccc;
+               font-size:104/32rem;
+               margin-top:36/32rem;
+           }
+           p{
+               text-align: center;
+               font-size:26/32rem;
+               color:#aeaeae;
+               margin-top:16/32rem;
+           }
+       }
+    }
+} 

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            float: left;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="container" class="container">
+    <!--(.box>img[src="images/P_00$.jpg"])*9-->
+    <div class="box"><img src="images/P_000.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_001.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_002.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_003.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_004.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_005.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_006.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_007.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_008.jpg" alt=""/></div>
+    <div class="box"><img src="images/P_009.jpg" alt=""/></div>
+</div>
+<script>
+    //因为将来要涉及到图片的高度 所以即使写在下面也要写在onload里面
+    window.onload = function () {
+        //找人
+        var container = document.getElementById("container");
+        var boxes = container.children;//所有的盒子
+        //3.计算第一行有多少张图片 计算一共有多少列
+        //window.innerWidth包括滚动条的宽度 我们这里只要页面的宽度
+        var pageWidth = document.documentElement.clientWidth;//页面宽度
+        //一个盒子的宽度
+        var boxWidth = boxes[0].offsetWidth;
+        //计算列数 列数=页面的宽度/box的宽度
+        //需要向下取整 因为图片都是整数
+        var column = Math.floor(pageWidth / boxWidth);
+        console.log(column);
+        //4.来一个数组 用来存放每一列的高度的数值
+        var arrHeight = [];//用来存放每一列的高度
+        //遍历所有的box 如果是第一行就把他的高度放到数组中作为这一列的初始高度
+        //如果不是就要通过JS去设置位置了
+        for (var i = 0; i < boxes.length; i++) {
+            if (i < column) {//先处理第一行的
+                arrHeight[i] = boxes[i].offsetHeight;
+            } else {
+
+                var minHeight = getMin(arrHeight).value;//高度的最小值
+                var minHeightIndex = getMin(arrHeight).index;//高度最小的那一列
+
+                //不是第一行 就要通过JS去摆放了
+                //接下来的图片 就要放在当前 高度最小的那一列的后面
+                //要设置位置就要加定位
+                boxes[i].style.position = "absolute";//绝对定位后 top和left才能生效
+                //left值 就是高度最小的那一列的索引所对应的图片的offsetLeft
+                boxes[i].style.left = boxes[minHeightIndex].offsetLeft + "px";
+                //top值 当前高度最小的那一列的高度值
+                boxes[i].style.top = minHeight + "px";
+                //把图片放到高度最小的那一列之后数组就改变了 所以要对数组的数据进行更新
+                //修改之前高度最小的那一项 这个值应该修改为 之前的值+当前放上去的图片的高度
+                arrHeight[minHeightIndex] = minHeight + boxes[i].offsetHeight;
+            }
+        }
+        //5.摆放盒子
+
+        console.log(arrHeight);
+        console.log(minHeight);
+        console.log(minHeightIndex);
+    };
+
+    function getMin(arr) {
+        var min = {};
+        min.value = arr[0];
+        min.index = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (min.value > arr[i]) {
+                min.value = arr[i];
+                min.index = i;
+            }
+        }
+        return min;
+    }
+</script>
+</body>
+</html>

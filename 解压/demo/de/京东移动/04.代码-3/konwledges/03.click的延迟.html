@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body,html{
+				height: 100%;
+			}
+			body{
+				background-color: orange;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+
+	// 定义变量 记录 touchstart开始的时间
+	var startTime = 0;
+
+	document.body.addEventListener('touchstart',function(){
+		console.log('start'); 
+		startTime = Date.now();
+	})
+	
+	// 手指 按到屏幕上 不移动 不会触发move事件
+	document.body.addEventListener('touchmove',function(){
+		console.log('move');
+	})
+	document.body.addEventListener('touchend',function(){
+		console.log('end');
+	})
+	// click 的触发时间 比touch要晚
+	// 延迟的时间 是300毫秒 目的是 让我们 双击缩放屏幕显示 成为可能
+	// 早期网站 基本都是 电脑尺寸缩放 让用户 双击缩放查看
+	// 谷歌浏览器中 如果 添加了视口属性 那么 就没有300毫秒的延迟了
+	// 一些老版本的 手机浏览器中 还是保有 300毫秒的延迟
+	document.body.onclick = function (){
+		console.log('click');
+		console.log(Date.now()-startTime);
+	}
+</script>

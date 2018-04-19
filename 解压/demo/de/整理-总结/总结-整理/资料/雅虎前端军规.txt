@@ -1,0 +1,39 @@
+
+Best Practices for Speeding Up Your Web Site
+https://developer.yahoo.com/performance/rules.html#
+
+Make Fewer HTTP Requests		减少http请求
+Use a Content Delivery Network (CDN)	使用CDN
+Add Expires or Cache-Control Header	使用缓存
+Gzip Components				压缩组件
+Put Stylesheets at Top			把样式放到顶部
+Put Scripts at Bottom			把脚本放到底部
+Avoid CSS Expressions
+Make JavaScript and CSS External
+Reduce DNS Lookups
+Minify JavaScript and CSS
+Avoid Redirects
+Remove Duplicate Scripts
+Configure ETags
+Make Ajax Cacheable
+Flush Buffer Early
+Use GET for Ajax Requests
+Postload Components
+Preload Components
+Reduce the Number of DOM Elements
+Split Components Across Domains
+Minimize Number of iframes
+Avoid 404s
+Reduce Cookie Size
+Use Cookie-Free Domains for Components
+Minimize DOM Access
+Develop Smart Event Handlers
+Choose <link> Over @import
+Avoid Filters
+Optimize Images
+Optimize CSS Sprites
+Do Not Scale Images in HTML
+Make favicon.ico Small and Cacheable
+Keep Components Under 25 KB
+Pack Components Into a Multipart Document
+Avoid Empty Image src

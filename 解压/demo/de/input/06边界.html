@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    console.log(/chuan/.test("chuan"));
+    console.log(/chuan/.test("chuang"));
+    console.log(/chuan/.test("achuan"));
+    //之前学习的是只要有我想要的就可以 这个是不符合表单验证的需求的
+    console.log("-----^-----");
+    //^放在开头 表示 限制开头
+    console.log(/^chuan/.test("chuan"));
+    console.log(/^chuan/.test("achuan"));//开头必须是chuan
+    console.log(/^chuan/.test("chuang"));//只限制开头不限制结尾
+    console.log("-----$-----");
+    //$放在结尾 表示 限制结尾
+    console.log(/chuan$/.test("chuan"));
+    console.log(/chuan$/.test("chuang"));//false
+    console.log(/chuan$/.test("achuan"));//只限制结尾不限制开头
+    console.log("-----^$-----");
+    //^$一起使用 表示严格限制 也就是说必须是我要的那个
+    console.log(/^chuan$/.test("chuan"));
+    console.log(/^chuan$/.test("achuan"));
+    console.log(/^chuan$/.test("chuang"));
+    console.log(/^chuan$/.test("chuanchuan"));//必须是我要的那个
+
+</script>
+</body>
+</html>

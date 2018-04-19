@@ -1,0 +1,142 @@
+/* 顶部通栏 */
+.wjs-header {
+  border: 1px solid gray;
+}
+.wjs-header .row {
+  /* 内部的div */
+}
+.wjs-header .row > div {
+  border-right: 1px solid gray;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.wjs-header .row > div a {
+  /* 内部的a标签样式 */
+  color: gray;
+}
+.wjs-header .row > div a.btn {
+  /* 内部按钮的样式 */
+  color: white;
+  width: 130px;
+  height: 20px;
+  line-height: 15.778px;
+}
+.wjs-header .row > div a.twoLevel {
+  /* 二维码 */
+  position: relative;
+}
+.wjs-header .row > div a.twoLevel img {
+  display: none;
+  position: absolute;
+  top: 27px;
+  left: -5px;
+}
+.wjs-header .row > div a.twoLevel:hover {
+  /* 二维码显示 */
+}
+.wjs-header .row > div a.twoLevel:hover img {
+  display: block;
+}
+/* 导航栏 */
+.heima-default {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+}
+.heima-default .navbar-brand {
+  color: #777;
+  height: 80px;
+  line-height: 50px;
+}
+.heima-default .navbar-brand:hover,
+.heima-default .navbar-brand:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+.heima-default .navbar-text {
+  color: #777;
+}
+.heima-default .navbar-nav > li > a {
+  color: #777;
+  height: 80px;
+  line-height: 50px;
+}
+.heima-default .navbar-nav > li > a:hover,
+.heima-default .navbar-nav > li > a:focus {
+  color: #333;
+  background-color: transparent;
+  border-bottom: 4px solid red;
+}
+.heima-default .navbar-nav > .active > a,
+.heima-default .navbar-nav > .active > a:hover,
+.heima-default .navbar-nav > .active > a:focus {
+  color: #555;
+  border-bottom: 4px solid red;
+}
+.heima-default .navbar-nav > .disabled > a,
+.heima-default .navbar-nav > .disabled > a:hover,
+.heima-default .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.heima-default .navbar-toggle {
+  border-color: #ddd;
+}
+.heima-default .navbar-toggle:hover,
+.heima-default .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.heima-default .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+.heima-default .navbar-collapse,
+.heima-default .navbar-form {
+  border-color: #e7e7e7;
+}
+.heima-default .navbar-nav > .open > a,
+.heima-default .navbar-nav > .open > a:hover,
+.heima-default .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+  .heima-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+  .heima-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .heima-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+    background-color: transparent;
+  }
+  .heima-default .navbar-nav .open .dropdown-menu > .active > a,
+  .heima-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .heima-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+  }
+  .heima-default .navbar-nav .open .dropdown-menu > .disabled > a,
+  .heima-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .heima-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.heima-default .navbar-link {
+  color: #777;
+}
+.heima-default .navbar-link:hover {
+  color: #333;
+}
+.heima-default .btn-link {
+  color: #777;
+}
+.heima-default .btn-link:hover,
+.heima-default .btn-link:focus {
+  color: #333;
+}
+.heima-default .btn-link[disabled]:hover,
+fieldset[disabled] .heima-default .btn-link:hover,
+.heima-default .btn-link[disabled]:focus,
+fieldset[disabled] .heima-default .btn-link:focus {
+  color: #ccc;
+}

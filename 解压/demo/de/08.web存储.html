@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button"  value='保存内容'/>
+		<input type="button"  value='读取内容'/>
+		<input type="button"  value='删除内容'/>
+	</body>
+</html>
+<script type="text/javascript">
+
+	// localStorage 能够将某些数据 长久保存 关闭也存在
+	// sessionStorage 浏览器关闭之后 就没有了
+	// 语法一模一样
+	// setItem getItem removeItem clear
+	/*
+	 * 非私密的信息 可以保存
+	 	账号密码: 语法层面可以 不安全 因为能够在application 中看到
+	 	皮肤信息 用户名 用来欢迎该用户
+	 	
+	 	cookie session
+	 */
+	
+	document.querySelector('input[value=保存内容]').onclick = function (){
+		
+		// 支持键值对保存属性
+		// setItem 键值的方式保存 
+		// 值只能保存 字符串
+		// key 可以随意设置 后面的会覆盖前面 如果多次保存
+		window.localStorage.setItem('food','西兰花炒蛋');
+	
+		window.sessionStorage.setItem('food','干煸大蒜');
+		
+	}
+	
+	document.querySelector('input[value=读取内容]').onclick = function (){
+		// 获取值 需要通过key去获取
+		var foodName = window.localStorage.getItem('food');
+		alert(foodName);
+	}
+	document.querySelector('input[value=删除内容]').onclick = function (){
+		// 删除指定的key对应的value
+//		window.localStorage.removeItem('food');
+		
+		// 全部干掉
+		window.localStorage.clear();
+	}
+	
+	
+</script>
+

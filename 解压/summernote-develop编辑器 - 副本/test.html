@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Summernote</title>
+  <link href="http://www.jq22.com/jquery/bootstrap-3.3.4.css" rel="stylesheet">
+  <script src="http://www.jq22.com/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script> 
+  <link href="summernote.css" rel="stylesheet">
+  <script src="summernote.js"></script>
+  <style>
+    #summernote{
+      width: 500px;
+      height: 400px;
+    }
+    td{
+      width: 20px;
+      height: 20px;
+      border:1px solid #efefef;
+    }
+    .red{
+      background-color: red;
+    }
+    .blue{
+      background-color: blue;
+    }
+    .yellow{
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  请选择背景颜色
+  <table>
+    <tr>
+      <td class="red"></td>
+      <td class="blue"></td>
+      <td class="yellow"></td>
+    </tr>
+  </table>
+  <div id="summernote"></div>
+  <script>
+    $(document).ready(function() {
+        $('#summernote').summernote();
+    });
+    $('td').on('click',function(){
+      var bg = $(this).css('background-color');
+      $('.panel-body').css({
+        'background-color':bg
+      })
+    })
+  </script>
+
+</body>
+</html>

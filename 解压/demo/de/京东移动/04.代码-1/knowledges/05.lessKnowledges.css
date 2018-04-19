@@ -1,0 +1,37 @@
+body {
+  background-color: orange;
+}
+/* 这种注释 会被保留 */
+h1 {
+  font-size: 100px;
+}
+a {
+  color: #0094ff;
+}
+div {
+  height: 50px;
+}
+.red {
+  color: red;
+  background-color: red;
+  border-color: red;
+}
+/* 在某一个样式中 混入 另外一个 样式 */
+.myRedBox {
+  color: red;
+  background-color: red;
+  border-color: red;
+}
+/* 直接写 层次关系 */
+.container {
+  background-color: orange;
+}
+.container .head {
+  font-size: 20px;
+}
+.container .head > a {
+  text-decoration: none;
+}
+.container p {
+  color: orange;
+}

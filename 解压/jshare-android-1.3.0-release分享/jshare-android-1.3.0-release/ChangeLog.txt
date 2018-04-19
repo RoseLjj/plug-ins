@@ -1,0 +1,19 @@
+==========Change Log==========
+1.增加Facebook平台分享、授权、获取个人信息。
+2.修复已知问题。
+==========升级提示==========
+建议升级！
+==========升级指南==========
+0. 首先解压您获取到的zip压缩包。
+1. 更新库文件。
+打开libs文件夹。
+删除原有极光jar文件, 并将 jcore-android-1.x.y.jar 、 jshare-android-1.3.0.jar、jshare-qq-android-1.3.0.jar、jshare-sina-android-1.3.0.jar、jshare-wechat-android-1.3.0.jar以及jshare-facebook-android-1.3.0.jar复制入libs 文件夹。
+用对应CPU文件夹下的 libjcorexxx.so文件，替换项目中原有的极光so文件。
+2. 更新AndroidManifest.xml。
+压缩包根目录下有示例 AndroidManifest 文件。
+请对照示例更新跟JShare相关的组件属性，permission，Action 等配置。
+并在中文提示的位置替换你的包名 和 appkey。
+3. 更新JGShareSDK.xml。
+压缩包根目录下有示例 JGShareSDK文件。
+请对照示例更新各个平台配置。
+4. 如果使用jcenter的方式集成JShare，不需要添加相关组件和资源，详细说明请参考官方集成指南。

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>防腾讯固定导航栏</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+        //$(function(){})//当前文档准备好了
+        window.onload = function () {//外部资源加载完成（包括图片）
+            //1.窗体滚动的时候 获取文档被卷去的头部的高度 和 头部部分的高度
+            //判断 如果 被卷去的头部的高度 大于 头部部分的高度 就要固定定位了
+            $(window).scroll(function () {
+                var topHeight = $(".top").height();
+                var scrollTop = $(document).scrollTop();
+                if (scrollTop > topHeight) {
+                    $(".nav").css({
+                        "position": "fixed",
+                        "top": "0px"
+                    });
+                    //导航栏 变为固定定位后 脱离标准来 不再占位置 后面的会掉上来
+                    $(".main").css("marginTop", $(".nav").height());
+                } else {
+                    $(".nav").css("position", "static");
+                    $(".main").css("marginTop", 0);
+                }
+            })
+        };
+    </script>
+</head>
+<body>
+<div class="top">
+    <img src="images/top.png"/>
+</div>
+<div class="nav">
+    <img src="images/nav.png"/>
+</div>
+<div class="main">
+    <img src="images/main.png"/>
+</div>
+</body>
+</html>

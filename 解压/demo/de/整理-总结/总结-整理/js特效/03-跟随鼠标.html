@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<img src="images/img.jpg" alt="" width="50" height="50" id="pic"/>
+<script src="animate.js"></script>
+<script>
+    //找人
+    var pic = document.getElementById("pic");
+    //鼠标点击页面 获取点击时的位置 让精灵图 渐渐地过来
+    /*document.onmousemove = function () {
+        console.log("鼠标移动了");
+    };*/
+    //onmousemove
+    document.onmousemove = function (event) {
+        var event = event || window.event;
+        //获取点击时在页面上的位置
+        var pageX = event.pageX || event.clientX + document.documentElement.scrollLeft;
+        var pageY = event.pageY || event.clientY + document.documentElement.scrollTop;
+        //计算目标
+        var targetX = pageX - pic.offsetWidth / 2;
+        var targetY = pageY - pic.offsetHeight / 2;
+        //让精灵图渐渐地过来
+        animate(pic, {"left": targetX, "top": targetY});
+    };
+// -----------------------------------------动画函数---------------------------------------
+    function animate(obj, json, fn) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+            var flag = true;
+            for (var k in json) {
+                if (k === "opacity") {
+                    var leader = getStyle(obj, k) * 100;
+                    var target = json[k] * 100;
+                    var step = (target - leader) / 10;
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    leader = leader + step;
+                    obj.style[k] = leader / 100;
+                } else if (k === "zIndex") {
+                    obj.style.zIndex = json[k];
+                } else {
+                    var leader = parseInt(getStyle(obj, k)) || 0;
+                    var target = json[k];
+                    var step = (target - leader) / 10;
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    leader = leader + step;
+                    obj.style[k] = leader + "px";
+                }
+                if (leader != target) {
+                    flag = false;
+                }
+            }
+            if (flag) {
+                clearInterval(obj.timer);
+                if (fn) {
+                    fn();
+                }
+            }
+        }, 8);
+    }
+    function getStyle(obj, attr) {
+        if (window.getComputedStyle) {
+            return window.getComputedStyle(obj, null)[attr];
+        } else {
+            return obj.currentStyle[attr];
+        }
+    }
+</script>
+</body>
+</html>

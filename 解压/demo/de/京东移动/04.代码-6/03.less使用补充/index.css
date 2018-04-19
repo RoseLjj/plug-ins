@@ -1,0 +1,11 @@
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  background-color: #d31516;
+  width: 33;
+}

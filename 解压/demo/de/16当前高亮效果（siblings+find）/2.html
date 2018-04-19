@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        li {
+            font-size: 22px;
+        }
+    </style>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            //1.鼠标移入当前li 让当前li的背景色变为pink 其他li的背景色变为white
+            $("#box li").mouseenter(function () {
+                //让当前li的背景色变为pink 其他li的背景色变为white
+                //之前无法方便的找到其他所有兄弟元素 所以才全都干掉
+                //让所有其他的兄弟元素的背景色变为white
+                //$(this).css("backgroundColor", "pink");
+                //siblings() 其他兄弟元素
+                // 参数 可以对选择到的集合进行进一步筛选
+                //$(this).siblings().css("backgroundColor", "white");
+                //链式编程 如果是设置操作无需特定的返回值 就会返回之前的对象 从而可以一直点下去
+                $(this).css("backgroundColor", "pink").siblings().css("backgroundColor", "white");
+            });
+            //2.鼠标离开的时候 所有li的背景色变为white
+            $("#box").mouseleave(function () {
+                //$("li")
+                //$("ul>li")
+                //$("#box>ul>li")
+                //$("#box li")
+                //$(this).children().children()
+                //children()是寻找子级元素 find()是寻找后代元素
+                $(this).find("li").css("backgroundColor","white")
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li>菠萝</li>
+        <li>柚子</li>
+        <li>橙子</li>
+        <li>荔枝</li>
+        <li>木瓜</li>
+        <li>榴莲</li>
+        <li>柠檬</li>
+        <li>香蕉</li>
+    </ul>
+</div>
+</body>
+</html>

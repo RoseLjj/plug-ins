@@ -1,0 +1,557 @@
+/* 顶部通栏 */
+.wjs-header {
+    //  height: 40px;  默认有border-box属性 
+    border: 1px solid gray;
+    .row {
+        /* 内部的div */
+        >div {
+            border-right: 1px solid gray;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            a {
+                /* 内部的a标签样式 */
+                color: gray;
+            }
+            a.btn {
+                /* 内部按钮的样式 */
+                color: white;
+                width: 130px;
+                height: 20px;
+                line-height: 15.778px;
+            }
+            a.twoLevel {
+                /* 二维码 */
+                position: relative;
+                img {
+                    display: none;
+                    position: absolute;
+                    top: 27px;
+                    left: -5px;
+                }
+            }
+            a.twoLevel:hover {
+                /* 二维码显示 */
+                img {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+/* 导航栏 */
+.heima-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+}
+.heima-default .navbar-brand {
+    color: #777;
+    height: 80px;
+    line-height: 50px;
+    .wjs-font {
+        /* 设置字体大小 */
+        font-size: 50px;
+    }
+    .wjs-font-logo {
+        /* 设置logo为红色 */
+        color: red;
+    }
+}
+.heima-default .navbar-brand:hover,
+.heima-default .navbar-brand:focus {
+    color: #5e5e5e;
+    background-color: transparent;
+}
+.heima-default .navbar-text {
+    color: #777;
+}
+.heima-default .navbar-nav > li > a {
+    color: #777;
+    height: 80px;
+    line-height: 50px;
+}
+.heima-default .navbar-nav > li > a:hover,
+.heima-default .navbar-nav > li > a:focus {
+    color: #333;
+    background-color: transparent;
+    border-bottom: 4px solid red;
+}
+.heima-default .navbar-nav > .active > a,
+.heima-default .navbar-nav > .active > a:hover,
+.heima-default .navbar-nav > .active > a:focus {
+    color: #555; //  background-color: #e7e7e7;
+    border-bottom: 4px solid red;
+}
+.heima-default .navbar-nav > .disabled > a,
+.heima-default .navbar-nav > .disabled > a:hover,
+.heima-default .navbar-nav > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+}
+.heima-default .navbar-toggle {
+    border-color: #ddd;
+    margin-top: 23px;
+}
+.heima-default .navbar-toggle:hover,
+.heima-default .navbar-toggle:focus {
+    background-color: #ddd;
+}
+.heima-default .navbar-toggle .icon-bar {
+    background-color: #888;
+}
+.heima-default .navbar-collapse,
+.heima-default .navbar-form {
+    border-color: #e7e7e7;
+}
+.heima-default .navbar-nav > .open > a,
+.heima-default .navbar-nav > .open > a:hover,
+.heima-default .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+    .heima-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #777;
+    }
+    .heima-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .heima-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #333;
+        background-color: transparent;
+    }
+    .heima-default .navbar-nav .open .dropdown-menu > .active > a,
+    .heima-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .heima-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #555;
+        background-color: #e7e7e7;
+    }
+    .heima-default .navbar-nav .open .dropdown-menu > .disabled > a,
+    .heima-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+    .heima-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+        color: #ccc;
+        background-color: transparent;
+    }
+}
+.heima-default .navbar-link {
+    color: #777;
+}
+.heima-default .navbar-link:hover {
+    color: #333;
+}
+.heima-default .btn-link {
+    color: #777;
+}
+.heima-default .btn-link:hover,
+.heima-default .btn-link:focus {
+    color: #333;
+}
+.heima-default .btn-link[disabled]:hover,
+fieldset[disabled] .heima-default .btn-link:hover,
+.heima-default .btn-link[disabled]:focus,
+fieldset[disabled] .heima-default .btn-link:focus {
+    color: #ccc;
+}
+/* 轮播图的样式 */
+.wjs_banner {
+    .banner_img {
+        height: 410px;
+        display: block;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .banner_img_a {
+        background-image: url('../img/slide_01_2000x410.jpg');
+    }
+    .banner_img_b {
+        background-image: url('../img/slide_02_2000x410.jpg');
+    }
+    .banner_img_min img {
+        width: 100%;
+    }
+}
+/* 微金所 服务区域布局 */
+.wjs_serve {
+    /* 把row 下面的 div 添加padding 让间距增加 */
+    .row>div {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 80px;
+    }
+    .media {
+        color: gray;
+    }
+    .media:hover {
+        color: red;
+    }
+    .media-left {
+        span {
+            font-size: 40px;
+        }
+    }
+}
+/* 微金所 预约区域的布局 */
+.wjs_book {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 15px 100px 15px 10px;
+    .pull-left {
+        a {
+            color: red;
+            border-bottom: 1px dashed red;
+        }
+    }
+    .pull-right {
+        a {
+            color: gray;
+        }
+    }
+}
+/* 微金所 优惠券布局 */
+.heima-tabs {
+    border-bottom: 1px solid #ddd;
+}
+.heima-tabs > li {
+    float: left;
+    margin-bottom: -1px;
+}
+.heima-tabs > li > a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    color: gray;
+}
+.heima-tabs > li > a:hover {
+    //border-color: #eee #eee #ddd;
+    background-color: transparent;
+    border-bottom: 3px solid red;
+}
+.heima-tabs > li.active > a,
+.heima-tabs > li.active > a:hover,
+.heima-tabs > li.active > a:focus {
+    color: #555;
+    cursor: default; //background-color: #fff;
+    //border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    background-color: transparent;
+    border-bottom: 3px solid red;
+}
+.heima-tabs.nav-justified {
+    width: 100%;
+    border-bottom: 0;
+}
+.heima-tabs.nav-justified > li {
+    float: none;
+}
+.heima-tabs.nav-justified > li > a {
+    margin-bottom: 5px;
+    text-align: center;
+}
+.heima-tabs.nav-justified > .dropdown .dropdown-menu {
+    top: auto;
+    left: auto;
+}
+@media (min-width: 768px) {
+    .heima-tabs.nav-justified > li {
+        display: table-cell;
+        width: 1%;
+    }
+    .heima-tabs.nav-justified > li > a {
+        margin-bottom: 0;
+    }
+}
+.heima-tabs.nav-justified > li > a {
+    margin-right: 0;
+    border-radius: 4px;
+}
+.heima-tabs.nav-justified > .active > a,
+.heima-tabs.nav-justified > .active > a:hover,
+.heima-tabs.nav-justified > .active > a:focus {
+    border: 1px solid #ddd;
+}
+@media (min-width: 768px) {
+    .heima-tabs.nav-justified > li > a {
+        border-bottom: 1px solid #ddd;
+        border-radius: 4px 4px 0 0;
+    }
+    .heima-tabs.nav-justified > .active > a,
+    .heima-tabs.nav-justified > .active > a:hover,
+    .heima-tabs.nav-justified > .active > a:focus {
+        border-bottom-color: #fff;
+    }
+}
+/* 优惠券布局 */
+.ticket {
+    display: block;
+    height: 150px;
+    color: gray;
+    /* 设置容器的阴影 */
+    box-shadow: 4px 4px 8px gray;
+    /* 清除 手指悬停的样式 */
+    &:hover {
+        text-decoration: none;
+        color: gray;
+    }
+    /* 设置伪元素的 显示大小 */
+    &::before {
+        font-size: 50px;
+        position: absolute;
+    }
+    .ticket_left {
+        overflow: hidden; //      background-color: orange;
+        height: 100%;
+        h3 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: 900;
+        }
+        /* 设置p标签的对其方式 */
+        .content_left {
+            text-align: left;
+            p {
+                padding-left: 10px;
+            }
+        }
+        .content_right {
+            text-align: right;
+            p {
+                padding-right: 10px;
+            }
+        }
+        /* 设置 公共的a标签的 字体大小 以及字体颜色 */
+        p {
+            font-size: 12px;
+            font-weight: 700;
+        }
+    }
+    .ticket_right {
+        width: 108px;
+        float: right; //      background-color: skyblue;
+        height: 100%;
+        padding-top: 20px;
+        position: relative;
+        /* 设置 左边的 分割线 */
+        border-left: 1px dashed gray;
+        p {
+            /* 设置内容的对其方式*/
+            text-align: center;
+            font-weight: 900;
+        }
+        /* 通过伪元素的方式 设置 上下 两个圆 */
+        &::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #fff; //          border:1px solid gray;
+            top: -10px;
+            left: -10px;
+            /* 设置内部阴影 */
+            box-shadow: inset 0 -3px 3px gray;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #fff; //          border:1px solid gray;
+            bottom: -10px;
+            left: -10px;
+            /* 设置内部阴影 */
+            box-shadow: inset 0 3px 3px gray;
+        }
+    }
+}
+/* 红色的优惠券 */
+.ticket.red {
+    background-color: red;
+    color: white;
+}
+/* 为优惠券的容器 添加样式 */
+.wjs_lowPrice {
+    /* 底部的边框 */
+    border-bottom: 1px solid gray;
+    .tab-content {
+        .container {
+            .row>div {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+/* 微金所新闻业布局 */
+.wjs_news {
+    .row>div:first-child {
+        h2 {
+            border-bottom: 1px solid gray;
+            padding-bottom: 20px;
+            text-align: center;
+            position: relative;
+            /* 使用为元素制作 小圆球 */
+            &::before {
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                border: 1px solid gray;
+                bottom: -5px;
+                right: -10px;
+            }
+        }
+    }
+}
+/* 新闻列表*/
+.wjs-news-tabs {
+    position: relative;
+}
+
+
+/* 使用伪元素的方式 添加线段 */
+.wjs-news-tabs::before{
+    content: '';
+    position:absolute;
+    height:80%;
+    border:1px dashed gray;
+    display: block;
+    top:25px;
+    left:25px;
+}
+
+.wjs-news-tabs > li {
+    float: left;
+    margin-bottom: -1px;
+    /* 设置一行一个li标签 */
+    width: 100%;
+}
+
+/* 自己添加媒体查询实现 响应式布局 1200px 对应到的是 bootstrap的 lg屏幕尺寸 */
+@media screen and (max-width:1200px){
+    .wjs-news-tabs > li {
+        width:25%;
+    }
+    .wjs-news-tabs::before{
+        display: none;
+    }
+}
+
+
+.wjs-news-tabs > li > a {
+    margin-right: 2px;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    color: white;
+    background-color: #ccc;
+    /* 设置为正方形 */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* 设置文字大小 */
+    font-size: 35px;
+    text-align: center;
+    line-height: 50px;
+    /* 清除padding */
+   padding: 0px;
+   /* 设置上下间隙
+  */
+    margin:20px 0;
+}
+.wjs-news-tabs > li > a:hover {
+    border-color: transparent;
+    background-color: transparent;
+    background-color: red;
+}
+.wjs-news-tabs > li.active > a,
+.wjs-news-tabs > li.active > a:hover,
+.wjs-news-tabs > li.active > a:focus {
+//  color: #555;
+    cursor: default;
+    background-color: red;
+    border: 1px solid transparent;
+    border-bottom-color: transparent;
+}
+.wjs-news-tabs.nav-justified {
+    width: 100%;
+    border-bottom: 0;
+}
+.wjs-news-tabs.nav-justified > li {
+    float: none;
+}
+.wjs-news-tabs.nav-justified > li > a {
+    margin-bottom: 5px;
+    text-align: center;
+}
+.wjs-news-tabs.nav-justified > .dropdown .dropdown-menu {
+    top: auto;
+    left: auto;
+}
+@media (min-width: 768px) {
+    .wjs-news-tabs.nav-justified > li {
+        display: table-cell;
+        width: 1%;
+    }
+    .wjs-news-tabs.nav-justified > li > a {
+        margin-bottom: 0;
+    }
+}
+.wjs-news-tabs.nav-justified > li > a {
+    margin-right: 0;
+    border-radius: 4px;
+}
+.wjs-news-tabs.nav-justified > .active > a,
+.wjs-news-tabs.nav-justified > .active > a:hover,
+.wjs-news-tabs.nav-justified > .active > a:focus {
+    border: 1px solid #ddd;
+}
+@media (min-width: 768px) {
+    .wjs-news-tabs.nav-justified > li > a {
+        border-bottom: 1px solid #ddd;
+        border-radius: 4px 4px 0 0;
+    }
+    .wjs-news-tabs.nav-justified > .active > a,
+    .wjs-news-tabs.nav-justified > .active > a:hover,
+    .wjs-news-tabs.nav-justified > .active > a:focus {
+        border-bottom-color: #fff;
+    }
+}
+
+/* 为新闻列表添加样式 */
+.wjs_news_info01{
+    list-style: none;
+    li{
+        padding: 10px 0;
+        a{
+            color:gray;
+        }
+    }
+}
+
+/* 新闻区域整体设置边框 */
+.wjs_news{
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+
+/* 设置底部区域 */
+.wjs_footer{
+    h2{
+        text-align: center;
+    }
+    ul{
+        list-style: none;
+        li{
+            margin:0 10px;
+            a{
+                font-size:100px;
+                color:gray;
+                text-decoration: none;
+            }
+        }
+    }
+}

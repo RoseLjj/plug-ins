@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 导入插件 -->
+	<script type="text/javascript" src='js/jquery.min.js'></script>
+	<script type="text/javascript" src='js/jquery.fullPage.min.js'></script>
+
+	<!-- 导入css -->
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+
+	<!-- 调用插件的方法 实现布局 -->
+	<script type="text/javascript">
+		$(function  () {
+			$('#threeSixZero').fullpage({
+			    	// 加载完毕事件
+			    	afterLoad:function(anchorLink,index ){
+			    		console.log(index);
+			    		// 先干掉其他的class
+			    		$('.section').removeClass('animation');
+
+			    		// 获取当前
+			    		// 问题是 执行速度太快了
+			    		// 解决方案 慢一点即可
+			    		setTimeout(function(){
+			    			$('.section').eq(index-1).addClass('animation');
+			    		},10);
+			    	}
+			    })	
+		})
+		
+	</script>
+
+
+</head>
+<body>
+	<div id="threeSixZero">
+		<!-- 区域1布局 start -->
+		    <div class="section one">
+		    	<div class="logo"></div>
+		    	<div class="text">
+		    		<img src="images/text_1.png" alt="">
+		    		<img src="images/text_2.png" alt="">
+		    		<img src="images/text_3.png" alt="">
+		    		<img src="images/text_4.png" alt="">
+		    		<img src="images/text_5.png" alt="">
+		    		<img src="images/text_6.png" alt="">
+		    		<img src="images/text_7.png" alt="">
+		    		<img src="images/text_8.png" alt="">
+		    	</div>
+		    	<div class="info"></div>
+		    </div>
+		 <!-- 区域1布局 end -->  
+
+		  <!-- 区域2布局 start --> 
+		    <div class="section two"> 
+			<div class='shield'>
+				<img src="images/shield_1.png" alt="">
+				<img src="images/shield_2.png" alt="">
+				<img src="images/shield_3.png" alt="">
+				<img src="images/shield_4.png" alt="">
+				<img src="images/shield_5.png" alt="">
+				<img src="images/shield_6.png" alt="">
+				<img src="images/shield_7.png" alt="">
+				<img src="images/shield_8.png" alt="">
+				<img src="images/shield_9.png" alt="">
+			</div>
+			<div class='info'></div>
+		    </div>
+		 <!-- 区域2布局 end --> 
+		 <!-- 区域3布局 start --> 
+		    <div class="section three">
+		    	<div class="info"></div>
+		    	<div class="circle"></div>
+		    	<div class="rocket"></div>
+		    </div>
+		 <!-- 区域3布局 end -->
+		 <!-- 区域4布局 start --> 
+		    <div class="section four">
+		    	<div class="searchBox">
+		    		<div class="search"></div>
+		    		<div class="key"></div>
+		    		<div class="result"></div>
+		    	</div>
+		    	<div class="info"></div>
+		    </div>
+		   <!-- 区域4布局 end --> 
+
+
+		 <div class="section five">
+		 	<div class="info"></div>
+		 	<div class="browser">
+		 		<div class="line top"></div>
+		 		<div class="line bottom"></div>
+		 		<div class="line left"></div>
+		 		<div class="line right"></div>
+		 	</div>
+		 </div>
+	</div>
+</body>
+</html>

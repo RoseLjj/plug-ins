@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				border:1px solid gray;
+				box-sizing:border-box;
+			}
+			
+			/* em 就是 根据文字的大小来的
+			 *  16px 1em =16
+			 *  20px 1em =20
+			 * 	em 来实现布局 在国外较为流行
+			 *  px
+			 *  em 如果不设置当前元素的字体大小 会使用继承来的大小
+			 *  如果设置了 用自己的字体大小
+			 *  如果要使用em 建议 页面中的 字体尺寸 不要 设置太多
+			 *  */
+			.first{
+				/* 160/10 =16 */
+				width: 10em;
+				height: 10em;
+				/* 最小的字体 默认设置 浏览器中的 是 12px */
+				font-size:10px;
+				/*font-size:15px;*/
+			}
+			.second{
+				/*  80/5  =16*/
+				width: 5em;
+				height: 5em;
+				/*font-size:30px;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class='first'>
+			西兰花炒蛋
+		</div>
+		<div class='second'>
+			牛肉板面顶配
+		</div>
+	</body>
+</html>

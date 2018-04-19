@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="msdropdown/dd.css" />
+    </head>
+    <body>
+        <div class="container">
+			<header>
+				<h1>image dropdown<span>jQuery Plugin</span></h1>
+				<nav class="codrops-demos">
+					<a href="index.html">Index</a>
+					<a href="normal.html">Simple</a>
+					<a class="current-demo" href="cssSprite.html">CSS Sprite</a>
+					<a href="multipleSkin.html">Multiple skin</a>
+					<a href="objectOriented.html">Object Oriented Approch</a>
+					<a href="mouse-events.html">Mouse Events</a>
+				</nav>
+			</header>
+			<section id="dg-container" class="dg-container">
+				<div class="dg-wrapper">
+					<h1>Javascript image dropdown <span id="ver"></span> </h1>
+					<div class="sel">
+            <form name="myform" id="myform"  action="getvalue.php" enctype="multipart/form-data" method="post">
+						  <select name="websites1" id="websites1" style="width:200px;" >
+					      <option class="calendar" value="calendar">Calendar</option>
+					      <option class="shoppingcart" value="shopping_cart">Shopping Cart</option>
+					      <option class="cd" value="cd">CD</option>
+					      <option class="email" value="email">Email</option>
+					      <option class="faq" value="faq">FAQ</option>
+					      <option class="games" value="games">Games</option>
+					      <option class="music" value="music">Music</option>
+					      <option class="phone" value="phone">Phone</option>
+					      <option class="graph" value="graph">Graph</option>
+					      <option class="secured" value="secured">Secured</option>
+					      <option class="video" value="video">Video</option>
+					    </select>
+            </form>
+					</div>
+				</div>
+
+			</section>
+        </div>
+    <script type="text/javascript" src="msdropdown/js/jquery.js"></script>
+		<script type="text/javascript" src="msdropdown/js/jquery.dd.js"></script>
+		<script type="text/javascript" src="msdropdown/js/test.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+			try {
+					//$("body select").msDropDown();
+					$("#websites1").msDropDown({useSprite:'sprite'})
+					$("#ver").html($.msDropDown.version);
+					} catch(e) {
+						alert("Error: "+e.message);
+					}
+			})
+		</script>
+    </body>
+</html>

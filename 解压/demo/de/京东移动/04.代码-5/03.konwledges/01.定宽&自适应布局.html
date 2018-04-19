@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body>div {
+				border: 1px solid gray;
+				height: 200px;
+			}
+			
+			.left {
+				background-color: orange;
+				height: 200px;
+			}
+			
+			.right {
+				background-color: yellowgreen;
+				/*height: 200px;*/
+			}
+			/* 方案1 */
+			
+			.container_first {
+				position: relative;
+				padding-left: 150px;
+			}
+			
+			.container_first .left {
+				width: 150px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+			.container_first .right {
+				width: 100%;
+			}
+			/* 使用浮动实现 */
+			
+			.container_second {}
+			
+			.container_second .left {
+				width: 150px;
+				float: left;
+			}
+			
+			.container_second .right {
+				overflow: hidden;
+			}
+			/* 布局3 */
+			
+			.container_third {}
+			
+			.container_third .left {
+				overflow: hidden;
+			}
+			
+			.container_third .right {
+				float: right;
+				width: 150px;
+				height: 200px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>padding</h1>
+		<div class="container_first">
+			<div class="left"></div>
+			<div class="right">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto voluptatem repudiandae voluptates atque nulla porro sequi provident rerum accusantium laudantium itaque labore maiores optio totam tenetur necessitatibus repellat deleniti aliquid!
+			</div>
+		</div>
+		<h1>浮动的方式--左边定宽</h1>
+		<div class="container_second">
+			<div class="left"></div>
+			<div class="right">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi quas tenetur quam voluptate nam consectetur blanditiis nobis numquam consequuntur similique ipsam quisquam amet officia quidem consequatur! Incidunt expedita odit vero accusantium ducimus suscipit cum ipsum eaque nulla beatae reprehenderit odio dolor placeat laudantium voluptate tempora consectetur accusamus officiis doloremque commodi iure distinctio perspiciatis eum magni aperiam exercitationem nobis hic unde quidem in enim voluptates iusto ab! Deleniti corporis odit est officia quasi illo nisi nemo error. Necessitatibus odio hic unde quam incidunt quis voluptates sequi voluptatibus quo quaerat architecto omnis blanditiis. Debitis dolorem at corporis aliquid minima quisquam tempora assumenda inventore non officiis dolorum sit accusantium rerum laboriosam quibusdam. Quasi doloribus amet itaque officia sed sapiente
+			</div>
+		</div>
+		<h1>浮动的方式--右边定宽</h1>
+		<div class="container_third">
+			<div class="right">
+			</div>
+			<div class="left">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi quas tenetur quam voluptate nam consectetur blanditiis nobis numquam consequuntur similique ipsam quisquam amet officia quidem consequatur! Incidunt expedita odit vero accusantium ducimus suscipit cum ipsum eaque nulla beatae reprehenderit odio dolor placeat laudantium voluptate tempora consectetur accusamus officiis doloremque commodi iure distinctio perspiciatis eum magni aperiam exercitationem nobis hic unde quidem in enim voluptates iusto ab! Deleniti corporis odit est officia quasi illo nisi nemo error. Necessitatibus odio hic unde quam incidunt quis voluptates sequi voluptatibus quo quaerat architecto omnis blanditiis. Debitis dolorem at corporis aliquid minima quisquam tempora assumenda inventore non officiis dolorum sit accusantium rerum laboriosam quibusdam. Quasi doloribus amet itaque officia sed sa
+			</div>
+
+		</div>
+	</body>
+
+</html>

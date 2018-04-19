@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul {
+            list-style: none
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 1150px;
+            height: 400px;
+            margin: 50px auto;
+            border: 1px solid red;
+            overflow: hidden;
+        }
+
+        div li {
+            width: 240px;
+            height: 400px;
+            float: left;
+            /*background-image: url(images/1.jpg);*/
+        }
+
+        div ul {
+            width: 1300px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script>
+    var box = document.getElementById("box");
+    var ul = box.children[0];
+    var lis = ul.children;
+    //动态设置背景图
+    for (var i = 0; i < lis.length; i++) {
+        lis[i].style.backgroundImage = "url(images/sfq" + (i + 1) + ".jpg)";
+        //给每一个li注册鼠标经过事件 鼠标经过后排他
+        lis[i].onmouseover = function () {
+            //干掉所有人 让所有人的width渐渐地变为100
+            for (var j = 0; j < lis.length; j++) {
+                //lis[j]
+                animate(lis[j], {"width": 100});
+            }
+            //留下我自己 让当前li的width渐渐地变为800
+            animate(this, {"width": 800});
+        };
+    }
+    //离开盒子后所有的li的width都变240
+    box.onmouseout = function () {
+        for (var i = 0; i < lis.length; i++) {
+            animate(lis[i], {"width": 240});
+        }
+    };
+
+
+    function animate(obj, json) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+            //定时器肯定要清除 每一个属性都到达了才能清除
+            var flag = true;//假设这一次执行完成后 所有属性都到达了目标值
+            for (var k in json) {
+                var leader = parseInt(getStyle(obj, k)) || 0;
+                var target = json[k];
+                var step = (target - leader) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                leader = leader + step;
+                obj.style[k] = leader + "px";
+                console.log("代码还在运行");
+                if (leader !== target) {//当前属性还没有到达目标
+                    flag = false;//假设错了
+                }
+            }
+            if (flag) {//最后任然是true 说明都到了
+                clearInterval(obj.timer);//清理定时器
+            }
+        }, 15);
+    }
+
+    //封装 获取计算后样式属性的兼容函数 能够获取任意对象的任意属性
+    function getStyle(obj, attr) {
+        if (window.getComputedStyle) {
+            return window.getComputedStyle(obj, null)[attr];
+        } else {
+            return obj.currentStyle[attr];
+        }
+    }
+</script>
+</body>
+</html>

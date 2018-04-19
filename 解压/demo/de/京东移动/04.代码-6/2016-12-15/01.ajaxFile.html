@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="" id='ajaxForm'>
+			<input type="file"  name='selectFile' />
+		</form>
+		<input type="button" value='ajax提交数据'  id='ajax'/>
+	</body>
+</html>
+<script type="text/javascript">
+	document.querySelector('#ajax').onclick = function(){
+		// 创建
+		var ajax = new XMLHttpRequest();
+		
+		// 设置
+		ajax.open('post','01.ajaxFile.php');
+		
+		// 设置header
+//		ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		
+		// 获取 form表单对象 创建一个 叫做 formdata的对象
+		//  如果 我们使用 formData 这个对象 来传递文件 不需要设置 上面的请求头
+		var formDom = document.querySelector('#ajaxForm');
+		
+		var formData = new FormData(formDom);
+		
+		// 发送 发送的时候 将formData传入 send方法
+		ajax.send(formData);
+		
+		
+		//注册事件
+		ajax.onreadystatechange = function (){
+			if(ajax.readyState==4&&ajax.status==200){
+				console.log(ajax.responseText);
+			}
+		}
+	}
+</script>

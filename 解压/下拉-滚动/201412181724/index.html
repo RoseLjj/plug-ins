@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.useso.com/css?family=PT+Sans:400,700|Bitter' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/css.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/service.ddlist.jquery.css">
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<style>
+
+  /* Drop down list with images */
+  #ddList-fruitList1 > a,
+  #ddList-fruitList2 > a,
+  #ddList-fruitList1 > ul li a,
+  #ddList-fruitList2 > ul li a {
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+  }
+  #ddList-fruitList1 img,
+  #ddList-fruitList2 img {
+    max-width: 32px;
+  }
+  #ddList-fruitList1 label,
+  #ddList-fruitList2 label {
+    display: inline-block;
+    margin-top: 5px;
+  }
+  /* Drop down list with images on the right side */
+  #ddList-fruitList2 > a > img,
+  #ddList-fruitList2 > ul li a > img { 
+    float: right; 
+    margin-right: 0; 
+    margin-left: 5px;
+  }
+/* Drop down list with vertical scrollbar */
+  #ddList-colorsList > ul {
+    max-height: 197px;
+  }
+  /* Truncate description in selection element */
+  #ddList-provincesList2 > a > small {
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  </style>
+</head>
+<body>
+	<section class="cd-product">
+		<!-- <div class="cd-product-intro">
+      <h1>service.ddlist.jquery - Dropdown Select List</h1>
+    </div> cd-product-intro
+    
+    <div class="cd-product-mockupe">
+      <h4>Simple dropdown list</h4>
+      <div style="color: #497981; margin-bottom: 0.8333em;">
+        Selected province: <span id="provinceSelect1"></span>
+      </div>
+      <select id="provincesList1" name="provincesOption1">
+        <option value="0">West-Vlaanderen</option>
+        <option value="1">Oost-Vlaanderen</option>
+        <option value="2">Vlaams-Brabant</option>
+        <option value="3">Antwerpen</option>
+        <option value="4">Limburg</option>
+      </select>
+    </div> -->
+		
+
+		<!-- <div class="cd-product-mockupe">
+      <h4>Dropdown list with text and image</h4>
+      <div style="color: #497981; margin-bottom: 0.8333em;">
+        Selected fruit: <span id="fruitSelect"></span>
+      </div>
+      <select id="fruitList1" name="fruitOption1">
+        <option value="0" data-imagesrc="img/apple512.png">Apple</option>
+        <option value="1" data-imagesrc="img/apricot512.png">Apricot</option>
+        <option value="2" data-imagesrc="img/banana512.png" selected="selected">Banana</option>
+        <option value="3" data-imagesrc="img/cherry512.png">Cherry</option>
+        <option value="4" data-imagesrc="img/kiwi512.png">Kiwi</option>
+        <option value="5" data-imagesrc="http://code.cwwonline.be/media/1016/lemon512.png">Lemon</option>
+        <option value="6" data-imagesrc="img/mango512.png">Mango</option>
+        <option value="7" data-imagesrc="http://code.cwwonline.be/media/1013/orange512.png">Orange</option>
+        <option value="8" data-imagesrc="img/peach512.png">Peach</option>
+        <option value="10" data-imagesrc="img/pear512.png">Pear</option>
+        <option value="9" data-imagesrc="http://code.cwwonline.be/media/1018/strawberry512.png">Strawberry</option>
+      </select>
+    </div> .cd-product-mockup -->
+
+		<div class="cd-product-mockupe">
+			<h4>Dropdown list with scrollbar</h4>
+			<div style="color: #497981; margin-bottom: 0.8333em;">
+			  Selected color: <span id="colorSelect"></span>
+			</div>
+			<select id="colorsList" name="colorsOption">
+			  <option value="red">Red</option>
+			  <option value="green">Green</option>
+			  <option value="blue">Blue</option>
+			  <option value="white" selected>White</option>
+			  <option value="black">Black</option>
+			  <option value="yellow">Yellow</option>
+			  <option value="orange">Orange</option>
+			  <option value="brown">Brown</option>
+			  <option value="gray">Gray</option>
+			  <option value="violet">Violet</option>
+			</select>
+		</div>
+
+		<!-- <div class="cd-product-mockupe">
+      <h4>Dropdown list with text and description</h4>
+      <div style="color: #497981; margin-bottom: 0.8333em;">
+        Selected province: <span id="provinceSelect2"></span>
+      </div>
+      <select id="provincesList2" name="provincesOption1">
+        <option value="0" data-description="Capital: Brugge, inhabitants (2012): 1.169.990">West-Vlaanderen</option>
+        <option value="1" selected data-description="Capital: Gent, inhabitants (2012): 1.454.716">Oost-Vlaanderen</option>
+        <option value="2" data-description="Capital: Leuven, inhabitants (2012): 1.094.751">Vlaams-Brabant</option>
+        <option value="3" data-description="Capital: Antwerpen, inhabitants (2012): 1.781.904">Antwerpen</option>
+        <option value="4" data-description="Capital: Hasselt, inhabitants (2012): 849.404">Limburg</option>
+      </select>
+    </div> -->
+		
+	</section> <!-- .cd-product -->
+<script src="http://libs.useso.com/js/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/service.ddlist.jquery.min.js"></script> <!-- Resource jQuery -->
+<script type="text/javascript">
+  // Execute on page load
+  $(function () {
+    $('#fruitList1').ddlist({
+      width: 180,
+      onSelected: function (index, value, text) {
+        // Show selected province in status panel
+        $('#fruitSelect').text(text + ' (value: ' + value + ')');
+      }
+    });
+  });
+</script>
+<script type="text/javascript">
+// Execute on page load
+  $(function () {
+    // Initialize dropdown lists, checkboxes, ..
+    $('#provincesList1').ddlist({
+      width: 270,
+      selectionIndex: 1,
+      onSelected: function (index, value, text) {
+        // Show selected province in status panel
+        $('#provinceSelect1').text(text + ' (value: ' + value + ')');
+      }
+    });
+  });
+</script>
+<script type="text/javascript">
+  // Execute on page load
+  $(function () {
+    $('#colorsList').ddlist({
+        width: 150,
+        onSelected: function (index, value, text) {
+          // Show selected color in status panel
+          $('#colorSelect').text(text + ' (value: ' + value + ', index: ' + index + ')');
+        }
+    });
+  });
+</script>
+<script type="text/javascript">
+  // Execute on page load
+  $(function () {
+    $('#provincesList2').ddlist({
+      width: 270,
+      onSelected: function (index, value, text) {
+        // Show selected province in status panel
+        $('#provinceSelect2').text(text + ' (value: ' + value + ')');
+      }
+    });
+  });
+</script>
+</body>
+</html>

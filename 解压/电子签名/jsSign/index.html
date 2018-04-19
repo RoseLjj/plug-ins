@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jSignature.min.js"></script>
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="js/flashcanvas.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div id="signature" style="height: 100%;"></div>
+		<br>
+		<input id="clear" type="button" value="clear">
+		<input id="export" type="button" value="export">
+		<input id="save" type="button" value="save">
+		<div id="pic" />
+		<p id="base" style="width:100%;"></p>
+		<script type="text/javascript" charset="utf-8">
+			mui.plusReady(function() {
+				plus.screen.lockOrientation('landscape-secondary');
+			});
+			$(document).ready(function() {
+				$("#signature").jSignature()
+			});
+			document.getElementById("clear").addEventListener('tap', function() {
+				$("#signature").jSignature("reset");
+				$("#pic")[0].innerHTML = '';
+			});
+			document.getElementById("save").addEventListener('tap', function() {
+				var datapair = $("#signature").jSignature("getData", "image");
+				var array = datapair.splice(",");
+				mui.toast(array[1]);
+			});
+			document.getElementById("export").addEventListener('tap', function() {
+				var datapair = $("#signature").jSignature("getData", "image");
+				console.log(datapair)
+				var i = new Image();
+				i.src = "data:" + datapair[0] + "," + datapair[1];
+				console.log(i.src);
+				$(i).appendTo($("#pic"));
+			});
+		</script>
+	</body>
+
+</html>

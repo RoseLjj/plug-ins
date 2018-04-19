@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="msdropdown/dd.css" />
+        <style type="text/css">
+			body{color: #333;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+			<header>
+				<h1>image dropdown<span>jQuery Plugin</span></h1>
+				<nav class="codrops-demos">
+					<a class="current-demo" href="index.html">Index</a>
+					<a href="normal.html">Simple</a>
+					<a href="cssSprite.html">CSS Sprite</a>
+					<a href="multipleSkin.html">Multiple skin</a>
+					<a href="objectOriented.html">Object Oriented Approch</a>
+					<a href="mouse-events.html">Mouse Events</a>
+				</nav>
+			</header>
+			<section id="dg-container" class="dg-container">
+				<div class="dg-wrapper">
+					<h1>Javascript image dropdown <span id="ver"></span> </h1>
+					<form name="myform" id="myform"  action="getvalue.php" enctype="multipart/form-data" method="post">
+						<div class="sel">
+							<select name="websites2" id="websites2" style="width:258px;">
+							  <option name="one" value="msDropDown" selected="selected" title="images/icon-ok.gif">msDropDown</option>
+							  <option  name="two" value="PrototypeCombobox" title="images/icon-ok.gif">Prototype Combobox</option>
+							  <option value="jQuery Tabs" title="images/icon-ok.gif">jQuery Tabs</option>
+							  <option value="Common Accordion" title="images/icon-ok.gif">Common Accordion</option>
+							</select>
+						</div>
+					</form>
+				</div>
+
+			</section>
+        </div>
+        <script type="text/javascript" src="msdropdown/js/jquery.js"></script>
+		<script type="text/javascript" src="msdropdown/js/jquery.dd.js"></script>
+		<script type="text/javascript" src="msdropdown/js/test.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+			try {
+					$("#websites2").msDropDown({mainCSS:'dd2'});
+					//alert($.msDropDown.version);
+					//$.msDropDown.create("body select");
+					$("#ver").html($.msDropDown.version);
+					} catch(e) {
+						alert("Error: "+e.message);
+					}
+			})
+		</script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>	
+</head>
+
+<style>
+
+	.panel2{
+    width: 400px;
+    max-height: 500px;
+    overflow: hidden;
+    background: #2c2f43;
+    position: relative;
+  }
+
+	.ite{
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 30px;
+    color: #fff
+  }
+</style>
+
+<body>
+
+		<div class="panel2" id="demo2">
+			<div class="_panel-box" >
+				<div class="ite">这是内容1</div>
+				<div class="ite">这是内容2</div>
+				<div class="ite">这是内容3</div>
+				<div class="ite">这是内容4</div>
+				<div class="ite">这是内容4</div>
+        <div class="ite">这是内容4</div>
+        <div class="ite">这是内容4</div>
+        <div class="ite">这是内容4</div>
+			</div>			
+		</div>
+
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="xb_scroll.js"></script>
+	
+	<script>
+	
+		/*最大高度*/
+		$("#demo2").xb_scroll({"isMaxHeight":true});
+		
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>bs的模板</title>
+
+		<!-- Bootstrap -->
+		<link href="lib/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+		<!-- 小于ie9的时候 导入了 两个js -->
+		<!-- html5shiv.min.js  html5中 新语义标签 -->
+		<!-- 低版本的 ie中 也让 媒体查询语法 被支持 -->
+		<!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+		<!-- 导入自己的css -->
+		<!--  导入base-->
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+
+	</head>
+
+	<body>
+		<div class="container-fluid wjs_news">
+			<div class="row">
+				<div class="col-lg-2 col-lg-offset-2">
+					<h2>全部新闻</h2>
+				</div>
+
+				<!-- 
+					一行一个
+					width:100%
+					竖线 伪元素 或者是真实的元素制作
+					设置点击的元素 不同的屏幕尺寸下 宽度不同
+					自己写媒体查询设置宽度
+						100%
+						25%
+				-->
+				<div class="col-lg-2">
+					<ul class="nav wjs-news-tabs" role="tablist">
+						<li role="presentation" class="active">
+							<a href="#wjs_news01" role="tab" data-toggle="tab" class='wjs-font wjs-font-new01'></a>
+						</li>
+						<li role="presentation">
+							<a href="#wjs_news02" role="tab" data-toggle="tab" class='wjs-font wjs-font-new02'></a>
+						</li>
+						<li role="presentation">
+							<a href="#wjs_news03" role="tab" data-toggle="tab" class='wjs-font wjs-font-new03'></a>
+						</li>
+						<li role="presentation">
+							<a href="#wjs_news04" role="tab" data-toggle="tab" class='wjs-font wjs-font-new04'></a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-6">
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="wjs_news01">
+							<ul class='wjs_news_info01'>
+								<li>
+									<a href="#"><span class='hidden-sm hidden-xs'>2016-11-5</span>【微还款】一周还款公告2016年1月18日-1月24日</a>
+								</li>
+								<li>
+									<a href="#"><span class='hidden-sm hidden-xs'>2016-11-5</span>【微还款】一周还款公告2016年1月18日-1月24日</a>
+								</li>
+								<li>
+									<a href="#"><span class='hidden-sm hidden-xs'>2016-11-5</span>【微还款】一周还款公告2016年1月18日-1月24日</a>
+								</li>
+								<li>
+									<a href="#"><span class='hidden-sm hidden-xs'>2016-11-5</span>【微还款】一周还款公告2016年1月18日-1月24日</a>
+								</li>
+								<li>
+									<a href="#"><span class='hidden-sm hidden-xs'>2016-11-5</span>【微还款】一周还款公告2016年1月18日-1月24日</a>
+								</li>
+								<li>
+									<a href="#"><span class='hidden-sm hidden-xs'>2016-11-5</span>【微还款】一周还款公告2016年1月18日-1月24日</a>
+								</li>
+								<li>
+									<a href="#"><span class='hidden-sm hidden-xs'>2016-11-5</span>【微还款】一周还款公告2016年1月18日-1月24日</a>
+								</li>
+								<li>
+									<a href="#"><span class='hidden-sm hidden-xs'>2016-11-5</span>【微还款】一周还款公告2016年1月18日-1月24日</a>
+								</li>
+								<li>
+									<a href="#"><span class='hidden-sm hidden-xs'>2016-11-5</span>【微还款】一周还款公告2016年1月18日-1月24日</a>
+								</li>
+								<li>
+									<a href="#"><span class='hidden-sm hidden-xs'>2016-11-5</span>【微还款】一周还款公告2016年1月18日-1月24日</a>
+								</li>
+							</ul>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="wjs_news02">.2..</div>
+						<div role="tabpanel" class="tab-pane" id="wjs_news03">.3..</div>
+						<div role="tabpanel" class="tab-pane" id="wjs_news04">..4.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="lib/js/jquery-1.12.4.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="lib/js/bootstrap.min.js"></script>

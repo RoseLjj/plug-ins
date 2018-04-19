@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css" >
+        .ct{
+            height: 100px;
+            width: 100px;
+            border:1px red solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="ct" onmouseover="fun1(event);" onmouseout="fun2(event);">
+
+    </div>
+    <script type="text/javascript">
+        //当然这样绑定事件函数是不对的
+    var div=document.getElementsByTagName("div")[0];
+        function fun1(event){
+            var x=event.pageX-div.offsetLeft;//(得到鼠标在框中的坐标)
+            var y=event.pageY-div.offsetTop;//(得到鼠标在框中的坐标)
+            var H=div.clientHeight;
+            var W=div.clientWidth;
+            var k=Math.floor(H/W);//为了防止不能整除
+            //得到2个斜边函数
+            //设y=ax+c
+            //(0,0) (width,height)其中一个斜边过这两点
+            //a=height/width,c=0
+            //y=(height/width)*x;
+            //(0,height) (width,0)另外一个斜边过这两点
+            //a=-height/width,c=height
+            //y=-(height/width)*x+height
+            if((k*x)>=y && (H-k*x)>=y){//这是判断从上方进入,这边简化处理不对等于情况做特别处理
+                console.log("从上方进入");
+                //todo
+            }
+
+            if((k*x)<y && (H-k*x)<y){
+                console.log("从下方进入");
+                //todo
+            }
+
+            if((k*x)<y && (H-k*x)>y){
+                console.log("从左边进入");
+                //todo
+            }
+
+            if((k*x)>y && (H-k*x)<y){
+                console.log("从右边进入");
+                //todo
+            }
+
+        }
+        function fun2(event){
+            var x=event.pageX-div.offsetLeft;//(得到鼠标在框中的坐标)
+            var y=event.pageY-div.offsetTop;//(得到鼠标在框中的坐标)
+            var H=div.clientHeight;
+            var W=div.clientWidth;
+            var k=Math.floor(H/W);//为了防止不能整除
+            //得到2个斜边函数
+            //设y=ax+c
+            //(0,0) (width,height)其中一个斜边过这两点
+            //a=height/width,c=0
+            //y=(height/width)*x;
+            //(0,height) (width,0)另外一个斜边过这两点
+            //a=-height/width,c=height
+            //y=-(height/width)*x+height
+            if((k*x)>=y && (H-k*x)>=y){//这是判断从上方进入,这边简化处理不对等于情况做特别处理
+                console.log("从上方离开");
+                //todo
+            }
+
+            if((k*x)<y && (H-k*x)<y){
+                console.log("从下方离开");
+                //todo
+            }
+
+            if((k*x)<y && (H-k*x)>y){
+                console.log("从左边离开");
+                //todo
+            }
+
+            if((k*x)>y && (H-k*x)<y){
+                console.log("从右边离开");
+                //todo
+            }
+
+        }
+    </script>    
+</body>
+</html>

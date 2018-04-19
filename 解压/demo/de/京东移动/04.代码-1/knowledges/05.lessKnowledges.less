@@ -1,0 +1,55 @@
+// less的注释
+// less支持 原生的 css写法 编译之后 消失
+body{
+    background-color: orange;
+}
+/* 这种注释 会被保留 */
+h1{
+    font-size:100px;
+}
+
+
+// 变量的写法
+@color:#0094ff;
+
+@normalHeight:100px;
+
+a{
+    color:@color;
+}
+div{
+    height: @normalHeight / 2;
+}
+
+
+// 混入
+.red{
+    color:red;
+    background-color: red;
+    border-color: red;
+}
+
+/* 在某一个样式中 混入 另外一个 样式 */
+.myRedBox{
+    .red
+}
+
+
+/* 直接写 层次关系 */
+
+.container{
+    background-color: orange;
+    .head{
+        font-size:20px;
+        >a{
+            text-decoration: none;
+        }
+    }
+    p{
+        color:orange;
+    }
+}
+
+
+
+
