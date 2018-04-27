@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>Title</title>
+    <script src="js/delighters.js"></script>
+    <style>
+        .test1{
+            width: 100%;
+            height: 600px;
+            background-color: pink;
+        }
+        .test2{
+            width: 100%;
+            height: 600px;
+            background-color: yellowgreen;
+        }
+
+        .test3{
+            width: 100%;
+            height: 800px;
+            background-color: cadetblue;
+        }
+        .test21{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+
+        .test22{
+            width: 100px;
+            height: 100px;
+            background-color: white;
+        }
+
+        .delighter .test21{
+            transition: all 1.5s;
+            transform: translateX(-200px);
+        }
+
+        .delighter.started .test21{
+            transition: all 1.5s;
+            transform: translateX(0px);
+        }
+
+        .delighter.started.ended .test21{
+            transition: all 1.5s;
+            transform: translateX(-200px);
+        }
+
+        .delighter .test22{
+            transition: all 1.5s;
+            transform: translateX(500px);
+        }
+
+        .delighter.started .test22{
+            transition: all 1.5s;
+            transform: translateX(100px);
+        }
+
+        .delighter.started.ended .test22{
+            transition: all 1.5s;
+            transform: translateX(600px);
+        }
+    </style>
+</head>
+<body>
+<div class="test1" data-delighter></div>
+<div class="test2" data-delighter>
+    <div class="test21"></div>
+    <div class="test22"></div>
+    <div class="test23"></div>
+</div>
+<div class="test3" data-delighter></div>
+</body>
+</html>
+<script>
+    Delighters.config({
+        // set the default start threshold at the bottom
+        start: 0.5,
+        // let's call Delighters.init() manually later
+        autoInit: true
+        // ... etc ...
+    })
+</script>
